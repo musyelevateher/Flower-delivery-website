@@ -12,6 +12,10 @@ exports.getAllFlowers = async (req, res) => {
 
 // POST a new flower (with image upload)
 exports.createFlower = async (req, res) => {
+  console.log("BODY:", req.body);
+  console.log("FILE:", req.file);
+
+
   try {
     const { name, description, price, category } = req.body;
     const image = req.file ? req.file.filename : null;

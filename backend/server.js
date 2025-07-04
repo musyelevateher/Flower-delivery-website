@@ -1,36 +1,30 @@
-// Step 1: Import Express module
 const express = require('express');
-const mongoose = require ( 'mongoose' );
+const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-
 dotenv.config();
 
-// Import the user routes
-
-
-// Step 2: Create an Express application
 const app = express();
 
-// Use the port from .env or default to 3000
-
-// Middleware to parse JSON requests
+// Middleware
+app.use(cors());
 app.use(express.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(express.urlencoded({ extended: true })); // <-- necessary for form-data parsing
 
-mongoose
-  .connect(process.env.MONG_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+// Connect to MongoDB Atlas
+mongoose.connect(process.env.MONG_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-
-//use the flower routes
-app.use('/api/flowers', require('./routes/flowerRoutes'));
+// Static file serving for images
 app.use('/uploads', express.static('uploads'));
 
+// Routes
+app.use('/api/flowers', require('./routes/flowerRoutes'));
 
-// Step 4: Start the server and listen on port 3000
-const PORT = process.env.PORT_NUMBER || 4000; 
+// Start server
+const PORT = process.env.PORT_NUMBER || 4000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);});
+  console.log(`Server is running on port ${PORT}`);
+});
