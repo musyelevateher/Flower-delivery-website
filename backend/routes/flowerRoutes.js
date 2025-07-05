@@ -23,5 +23,7 @@ router.post('/', upload.single('image'), flowerController.createFlower);
 
 // DELETE a flower by ID
 router.delete('/:id', flowerController.deleteFlower);
-
+// PATCH (update) a flower by ID
+router.patch('/:id', upload.single('image'), flowerController.updateFlower);
+console.log('✅ flowerRoutes.js loaded');
 module.exports = router;
