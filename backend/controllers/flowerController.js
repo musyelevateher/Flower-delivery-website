@@ -1,6 +1,5 @@
 const Flower = require('../models/flowerModel');
 
-// GET all flowers
 exports.getAllFlowers = async (req, res) => {
   try {
     const flowers = await Flower.find();
@@ -10,7 +9,6 @@ exports.getAllFlowers = async (req, res) => {
   }
 };
 
-// POST a new flower (with image upload)
 exports.createFlower = async (req, res) => {
   console.log("BODY:", req.body);
   console.log("FILE:", req.file);
@@ -34,7 +32,7 @@ exports.createFlower = async (req, res) => {
   }
 };
 
-// DELETE a flower by ID
+
 exports.deleteFlower = async (req, res) => {
   try {
     const { id } = req.params;
@@ -51,7 +49,7 @@ exports.deleteFlower = async (req, res) => {
   }
 };
 
-// ✅ PATCH (update) a flower by ID
+
 exports.updateFlower = async (req, res) => {
   try {
     
