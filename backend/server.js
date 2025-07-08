@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONG_URI)
 
 app.use('/uploads', express.static('uploads'));
 
-
+app.use('/api/auth', require('./routes/authRoutes'));
 const flowerRoutes = require('./routes/flowerRoutes');
 app.use('/api/flowers', flowerRoutes);
 
