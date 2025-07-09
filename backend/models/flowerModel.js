@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Define the User schema
+
 const flowerSchema = new mongoose.Schema({
   name: {
     type: String,
