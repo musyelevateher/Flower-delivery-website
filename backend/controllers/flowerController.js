@@ -15,18 +15,19 @@ exports.createFlower = async (req, res) => {
 
   try {
     const { name, description, price, category } = req.body;
-    const image = req.file ? req.file.filename : null;
+    const image = req.file.path;
 
     const flower = new Flower({
       name,
       description,
       price,
       category,
-      image,
+      image: image,
     });
 
     const savedFlower = await flower.save();
     res.status(201).json(savedFlower);
+    console.log("Flower created:", savedFlower);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
