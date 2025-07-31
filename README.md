@@ -59,7 +59,7 @@ It allows administrators to manage flowers in the system, including:
 - Listing all flowers
 - Adding new flowers (with image upload)
 - Deleting flowers (with instant UI feedback)
-- (You can add more features like editing as needed)
+
 
 This dashboard provides an easy-to-use interface for managing the flower catalog and interacts with the backend API.
 
@@ -154,7 +154,7 @@ npm start
 ## Deployment
 
 - Deploy on [Render.com](https://flower-delivery-website-backend-v9d6.onrender.com) 
-- A live video using loom: [Loom Video](https://www.loom.com/share/13164ab62fa64881af89c349922f93d9?sid=447f6c62-0a82-41f0-8571-969becda45d0)
+- A live video using loom: [Loom Video](https://www.loom.com/share/629ccc080da14055b5fb4c4ab9d85c41?sid=44c5115a-e1ff-48f9-84cc-83028f86d5c9)
 - Ensured `.env` and `node_modules` are in `.gitignore` before pushing to GitHub.
 
 ## Screenshots
