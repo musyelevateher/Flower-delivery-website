@@ -15,7 +15,7 @@ exports.createFlower = async (req, res) => {
 
   try {
     const { name, description, price, category } = req.body;
-    const image = req.file.path;
+    const image = req.file ? req.file.filename : null; // Only the filename
 
     const flower = new Flower({
       name,
@@ -29,7 +29,7 @@ exports.createFlower = async (req, res) => {
     res.status(201).json(savedFlower);
     console.log("Flower created:", savedFlower);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(500).json({ message: err.message });
   }
 };
 
@@ -75,6 +75,6 @@ exports.updateFlower = async (req, res) => {
     }
     res.json(flower);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(500).json({ message: err.message });
   }
 };
