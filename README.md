@@ -5,6 +5,9 @@ This project includes both the backend API and an admin frontend for a Flower De
 - The **backend API** is built with Node.js, Express, MongoDB Atlas, and Multer for image uploads.
 - The **admin frontend** is a React-based dashboard for administrators to manage flowers (list, add, and delete flowers with image upload).
 
+## Demo Link
+
+- Deploy on [Render.com](https://flower-delivery-website-backend-v9d6.onrender.com) 
 
 ## Features
 
@@ -153,7 +156,6 @@ npm start
 
 ## Deployment
 
-- Deploy on [Render.com](https://flower-delivery-website-backend-v9d6.onrender.com) 
 - A live video using loom: [Loom Video](https://www.loom.com/share/629ccc080da14055b5fb4c4ab9d85c41?sid=44c5115a-e1ff-48f9-84cc-83028f86d5c9)
 - Ensured `.env` and `node_modules` are in `.gitignore` before pushing to GitHub.
 
