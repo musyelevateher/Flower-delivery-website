@@ -5,10 +5,10 @@ This project includes both the backend API and an admin frontend for a Flower De
 - The **backend API** is built with Node.js, Express, MongoDB Atlas, and Multer for image uploads.
 - The **admin frontend** is a React-based dashboard for administrators to manage flowers (list, add, and delete flowers with image upload).
 
-## Demo Link
+## Demo Links
 
-- **Backend API**: [https://flower-delivery-website-backend-v9d6.onrender.com](https://flower-delivery-website-backend-v9d6.onrender.com)  
-- **Admin Frontend**: [https://flower-delivery-website-admin-frontend.onrender.com](https://flower-delivery-website-admin-frontend.onrender.com)
+[![Backend API](https://img.shields.io/badge/Backend-Live-green)](https://flower-delivery-website-backend-v9d6.onrender.com)  
+[![Admin Frontend](https://img.shields.io/badge/Admin-Live-blue)](https://flower-delivery-website-admin-frontend.onrender.com)
 
 ## Features
 
