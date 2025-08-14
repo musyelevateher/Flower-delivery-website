@@ -7,8 +7,8 @@ This project includes both the backend API and an admin frontend for a Flower De
 
 ## Demo Link
 
-- Deploy on [Render.com](https://flower-delivery-website-backend-v9d6.onrender.com) 
-- Deploy on [Render.com](https://flower-delivery-website-admin-frontend.onrender.com)
+- **Backend API**: [https://flower-delivery-website-backend-v9d6.onrender.com](https://flower-delivery-website-backend-v9d6.onrender.com)  
+- **Admin Frontend**: [https://flower-delivery-website-admin-frontend.onrender.com](https://flower-delivery-website-admin-frontend.onrender.com)
 
 ## Features
 
