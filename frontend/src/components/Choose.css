@@ -1,0 +1,42 @@
+.choose-container {
+  
+}
+.choose-title {
+  font-size: 1.5rem;
+  padding-bottom: 30px;
+  font-family: Gilroy;
+  font-weight: 500;
+  border-bottom: 2px solid black; 
+}
+.choose-content h1 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: Gilroy;
+  
+}
+.choose-content p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Gilroy;
+  color: #555;
+  font-style: regular;
+}
+.choose-image h1 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: Gilroy;
+  font-style: medium;
+}
+.choose-image p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Gilroy;
+  color: #555;
+  font-style: regular;
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+}
+.choose-content p {
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+}

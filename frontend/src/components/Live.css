@@ -1,0 +1,48 @@
+.live-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;/* Helps with responsiveness */
+}
+.live-details h2 {
+font-style: Regular italic;
+font-family: Gilroy;
+}
+.shop-row {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.shop-row h3 {
+font-size: 0.7rem;
+}
+.ow {
+width: 20px;
+height: auto;
+}
+.live-image img {
+width: 100%;
+display: block; /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+  .live-details,
+  .live-image {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .live-image img {
+    width: 100%;
+    height: auto;
+  }
+  .shop-row {
+    margin-top: 200px;
+    margin-left: 150px;
+  }
+  .live-details h2 {
+    font-size: 2rem;
+    margin-left: 50px;
+
+  }
+}
