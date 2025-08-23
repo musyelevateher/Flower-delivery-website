@@ -1,0 +1,167 @@
+.follow-container {
+  
+}
+.follow-image img {
+  margin-top: -20px;
+  width: 100%;
+}
+.follow-text h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: Gilroy; 
+}
+.follow-text h5 {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Gilroy;
+  color: #555;
+}
+.follow-text button {
+  padding: 12px 24px;
+  border: 1px solid #121212;
+  box-sizing: border-box;
+
+}
+.number {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: white;
+
+}
+.book {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+  border-bottom: 2px solid black;
+    
+}
+.follow-text3{
+  
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+  
+  display: flex;
+  flex-direction: column; /* Stack first phone-item above second */
+  gap: 8px; /* Space between the two phone lines */
+}
+
+.phone-item {
+  display: flex;
+  align-items: center; /* Icon & number in same line */
+  gap: 8px; /* Space between icon & number */
+}
+
+.phone-item h1, 
+.phone-item h5 {
+  margin: 0; /* Remove default margin */
+}
+
+
+.follow-text img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+.follow-text2 h1 {
+  font-family: Gilroy;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+  border-top: 2px solid black;
+  padding-top: 10px;
+}
+.follow-text3 h1 {
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  
+}
+.follow-text3 img {
+width:20px;
+height: 20px;
+ margin-right: 8px;
+}
+.follow-text3 h5 {
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+
+}
+.follow-text4 h1 {
+  font-family: Gilroy;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.follow-text5 h6 {
+  font-family: Gilroy;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.follow-text5 img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+.follow-text5 h4 {
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: -20px;
+  margin-left: 25px;
+  color: #555;
+
+}
+.follow-text5 {
+border-bottom: 2px solid black;
+padding-bottom: 30px;
+}
+.follow-text5 h1 {
+  font-family: Gilroy;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  border-bottom:2px solid black;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .number {
+    width: 50%;
+    margin: 0 auto; 
+    
+  }
+  .book {
+    width: 50%;
+    margin: 0 auto;
+    
+  }
+  .follow-text {
+    padding-bottom: 100px;
+  }
+  .follow-text3  {
+    border-bottom: none;
+  }
+  .follow-text5 h1 {
+    border-bottom: none;
+  }
+ .follow-items {
+  display: flex;
+  flex-direction: column;
+ }
+  
+
+}
+
+
+
+

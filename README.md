@@ -1,6 +1,14 @@
-# Flower Delivery Website Backend
+# Flower Delivery Website 
 
-This is the backend API for a Flower Delivery Website, built with Node.js, Express, MongoDB Atlas, and Multer for image uploads.
+This project includes both the backend API and an admin frontend for a Flower Delivery Website.
+
+- The **backend API** is built with Node.js, Express, MongoDB Atlas, and Multer for image uploads.
+- The **admin frontend** is a React-based dashboard for administrators to manage flowers (list, add, and delete flowers with image upload).
+
+## Demo Links
+
+[![Backend API](https://img.shields.io/badge/Backend-Live-green)](https://flower-delivery-website-backend-v9d6.onrender.com)  
+[![Admin Frontend](https://img.shields.io/badge/Admin-Live-blue)](https://flower-delivery-website-admin-frontend.onrender.com)
 
 ## Features
 
@@ -31,8 +39,34 @@ Flower-delivery-website/
 │   ├── .env           # (ignored by git)
 │   ├── node_modules/  # (ignored by git)
 │   └── package.json
+│
+├── admin/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   │   ├── Flowers.js
+│   │   │   ├── AddFlowers.js
+│   │   │   └── (other admin pages)
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── frontend
+│
 ├── README.md
 ```
+
+## Admin Folder
+
+The `admin/` folder contains a React-based admin dashboard.  
+It allows administrators to manage flowers in the system, including:
+- Listing all flowers
+- Adding new flowers (with image upload)
+- Deleting flowers (with instant UI feedback)
+
+
+This dashboard provides an easy-to-use interface for managing the flower catalog and interacts with the backend API.
+
 ## User Model
 
 The `User` model includes the following fields:
@@ -57,29 +91,39 @@ PORT_NUMBER=4000
 MONG_URI=mongodb+srv://musyelevateher:Abda0101@cluster0.fk0cdv6.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=mysupersecretjwtkey123
 ```
-
 ## Installation
 
 1. Clone the repository:
    ```sh
    git clone https://github.com/musyelevateher/Flower-delivery-website.git
    ```
-2. Navigate to the backend folder:
+
+2. Navigate to the backend folder and install dependencies:
    ```sh
    cd Flower-delivery-website/backend
+   npm install
    ```
-3. Install dependencies:
+
+3. In a new terminal, navigate to the admin folder and install dependencies:
    ```sh
+   cd ../admin
    npm install
    ```
 
 ## Running the Server
 
+Start the backend server:
 ```sh
+cd backend
 node server.js
 ```
 
-## API Endpoints
+Start the admin frontend (in a separate terminal):
+```sh
+cd ../admin
+npm start
+```
+
 
 ### Auth
 
@@ -96,7 +140,7 @@ node server.js
 ### Image Access
 
 - Uploaded images are accessible at:  
-  `http://localhost:4000/uploads/<filename>`
+  `https://flower-delivery-website-backend-v9d6.onrender.com/uploads/<filename>`
 
 ## Testing with Postman
 
@@ -113,9 +157,16 @@ node server.js
 
 ## Deployment
 
-- Deploy on [Render.com](https://flower-delivery-website-backend-v9d6.onrender.com) 
-- A live video using loom: [Loom Video](https://www.loom.com/share/13164ab62fa64881af89c349922f93d9?sid=447f6c62-0a82-41f0-8571-969becda45d0)
+- A live video using loom: [Loom Video](https://www.loom.com/share/629ccc080da14055b5fb4c4ab9d85c41?sid=44c5115a-e1ff-48f9-84cc-83028f86d5c9)
 - Ensured `.env` and `node_modules` are in `.gitignore` before pushing to GitHub.
+
+## Screenshots
+
+Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
+
+![Screenshot 1] ![alt text](<Screenshot (86).png>)
+![Screenshot 2] ![alt text](<Screenshot (87).png>)
+
 
 ## License
 

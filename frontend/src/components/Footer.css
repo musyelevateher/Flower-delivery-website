@@ -1,0 +1,130 @@
+.footer-details p {
+  font-family: Gilroy;
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: #555;
+  
+
+}
+.mail {
+  width: 100%;
+  padding: 12px 12px;
+  background-color: white;
+  font-size: 14px; /* smaller text = slimmer input */
+  border: 1px solid #ccc;
+  max-width: 400px; 
+  box-sizing: border-box;
+
+}
+.footer-details button {
+width: 100%;
+  padding: 12px 12px;
+  background-color: black;
+  font-size: 14px; /* smaller text = slimmer button */
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  color: white;
+  max-width: 400px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  
+}
+.footer-text h1 {
+  font-family: Gilroy;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.footer-details {
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+}
+.footer-text h2 {
+  font-family: Gilroy;
+  font-size: 1.2rem;
+  font-weight: 200;
+
+}
+.footer-text h6 {
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-weight: 100;
+  margin-top: -7px;
+  color: #555;
+}
+  
+
+.footer-text {
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.footer-text2 h1 {
+  font-family: Gilroy;
+  font-size: 1.5rem;
+  font-weight: 100;
+
+}
+.footer-text2 h5 {
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #555;
+}
+.footer-text3 h1 {
+  font-family: Gilroy;
+  font-size: 1.2rem;
+  font-weight: 200;
+
+}
+.footer-text3 h5{
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-weight: 100;
+  color: #555;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; /* details wider, others equal */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-details {
+    border-bottom: none; /* remove mobile borders */
+    padding-bottom: 0;
+  }
+
+  .footer-text,
+  .footer-text2,
+  .footer-text3 {
+    border-bottom: none; /* remove borders for cleaner layout */
+    padding-bottom: 0;
+  }
+
+  .footer-details p {
+    font-size: 1rem;
+  }
+
+  .mail,
+  .footer-details button {
+    max-width: 100%; /* allow full width in column */
+  }
+
+  .footer-text h1,
+  .footer-text2 h1,
+  .footer-text3 h1 {
+    font-size: 1.3rem; /* slightly smaller for tablet */
+  }
+
+  .footer-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .footer-text h6,
+  .footer-text2 h5,
+  .footer-text3 h5 {
+    font-size: 0.95rem;
+  }
+}
