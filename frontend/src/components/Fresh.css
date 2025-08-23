@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid black;/* Helps with responsiveness */
+  /* Helps with responsiveness */
 }
 .fresh-details h2 {
 font-style: Regular italic;
@@ -25,6 +25,10 @@ height: auto;
 width: 100%;
 display: block; /* Adjust as needed */
 }
+.fresh-details {
+  border-bottom: 2px solid black;
+
+}
 @media (min-width: 768px) {
   .fresh-details,
   .fresh-image {
@@ -45,4 +49,6 @@ display: block; /* Adjust as needed */
     margin-left: 50px;
 
   }
+}
+@media screen and (min-width: 1024px) {
 }

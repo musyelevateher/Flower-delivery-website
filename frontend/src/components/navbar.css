@@ -1,35 +1,54 @@
+/* Shared styles */
+ /* Remove underline + color from all links in navbar */
+.navbar ul li a,
+.dropdown ul li a,
+.dropdown h3 a,
+.dropdown h4 a {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* makes it inherit the parent text color */
+}
+
+/* Optional: custom hover effect */
+.navbar ul li a:hover,
+.dropdown ul li a:hover {
+  color: #ff4081; /* pick any hover color */
+}
+
 .top {
   width: 100%;
   background: white;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
-  position: relative; /* Ensure positioning context for absolute children */
+  position: relative;
+  min-height: 40px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem; 
-  min-height: 40px; /* Ensure consistent height */
-
-  
+  align-items: stretch;
+  padding: 0 1.5rem;
+  min-height: 40px;
+  height: 100%;
 }
 
 .hamburger-wrapper {
   display: flex;
   align-items: center;
   position: relative;
-  
-  padding-right: 10px; /* Increased padding for line spacing */
-  
-  
-
+  height: 100%;
+  padding: 0 10px;
 }
 
-
-
-
+.hamburger-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  right: 0;
+  width: 2px;
+  background-color: black;
+}
 
 /* Icons */
 .hamburger-icon,
@@ -49,7 +68,7 @@
   gap: 1rem;
 }
 
-/* Dropdown menus */
+/* Dropdown menus (mobile only) */
 .dropdown {
   padding: 1rem 1.5rem;
   background-color: #fafafa;
@@ -73,45 +92,84 @@
   margin: 0.5rem 0;
 }
 
+/* Desktop menu */
+.desktop-menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
 
-@media screen and (min-width: 768px) {
-  .navbar {
-    justify-content: space-between;
+.desktop-menu {
+  display: flex;
+  align-items: stretch; /* make li’s span full navbar height */
+}
+
+.desktop-menu li {
+  position: relative;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center; 
+  height: 100%;/* keep text vertically centered */
+}
+
+/* Vertical divider */
+.desktop-menu li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;     /* reach navbar top border */
+  bottom: 0;  /* reach navbar bottom border */
+  right: 0;
+  width: 2px;
+  background: black;
+}
+
+
+/* Left vs Right spacing */
+.left-menu {
+  margin-right: auto;
+}
+
+.right-menu {
+  margin-left: auto;
+}
+
+/* RESPONSIVE TOGGLE */
+.mobile-only {
+  display: flex;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-only {
+    display: none; /* hide hamburger & cart icons */
   }
 
-  .hamburger-icon,
-  .cart-icon {
-    display: block;
+  .desktop-menu li:not(:last-child)::after {
+    height: 43px;
+    margin-top: -10px;
   }
 
-  .dropdown {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-  }
+  
 
-  .menu-dropdown ul {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .cart-dropdown {
-    display: flex;
-    gap: 2rem;
+  .desktop-only {
+    display: flex; /* show text menus */
     align-items: center;
   }
 
-  .cart-dropdown h3,
-  .cart-dropdown h4,
-  .cart-dropdown h5 {
-    margin: 0;
-    font-weight: normal;
+  .dropdown {
+    display: none; /* no dropdowns on desktop */
   }
-   .hamburger-wrapper::after {
-    height: calc(100% + 4px); /* ensure it spans borders in desktop view */
-    top: -2px;
+
+  .hamburger-wrapper::after {
+    height: calc(100% + 4px);
+    top: 0;
   }
+ 
+
 }

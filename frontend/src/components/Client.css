@@ -38,8 +38,22 @@
   font-weight: 200;
 
 }
-@media (min-width: 768px){
+@media and (min-width: 768px){
   .client-details1 button {
     width: 30%;
+  }
+}
+
+
+@media screen and (min-width: 1024px){
+   .client-image {
+    position: relative;
+  }
+
+  .client-image img {
+    transform: translateY(-60px); /* visually moves image upward */
+  }
+  .client-details1 button {
+    width: 20%;
   }
 }

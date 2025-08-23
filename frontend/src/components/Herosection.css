@@ -1,7 +1,7 @@
 .iv {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* image above text */
+  align-items: center; /* default mobile: center */
   justify-content: center;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -11,9 +11,7 @@
 
 .quets {
   max-width: 100%;
-  
   height: auto;
-  
 }
 
 .gift {
@@ -21,27 +19,33 @@
   font-weight: 400;
   line-height: 1.3;
   max-width: 700px;
-  color:  #555;
-  font-style: Regular italic;
-  font-family: Gilroy;
-
+  color: #555;
+  font-style: italic;
+  font-family: Gilroy, sans-serif;
 }
 
-
+/* Tablet */
 @media screen and (min-width: 768px) {
   .gift {
     font-size: 1rem;
   }
-
-  .quets {
-    margin-left: -380px;
-  }
 }
 
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .iv {
+    align-items: flex-start; /* push content to left */
+    text-align: left; /* text also left aligned */
+     /* optional spacing from edge */
+  }
 
-
-
-
-
-
-
+  .gift {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 450px; /* smaller width = wraps text */
+  color: #555;
+  
+  font-family: Gilroy;
+}
+}

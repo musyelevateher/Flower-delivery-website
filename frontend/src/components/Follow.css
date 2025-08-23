@@ -1,10 +1,6 @@
-.follow-container {
-  
-}
-.follow-image img {
-  margin-top: -20px;
-  width: 100%;
-}
+/* ===== ORIGINAL VERSION (COMMENTED OUT) =====
+.follow-container { }
+
 .follow-text h1 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -20,44 +16,33 @@
   padding: 12px 24px;
   border: 1px solid #121212;
   box-sizing: border-box;
-
 }
 .number {
   border: 1px solid black;
   margin-bottom: 20px;
   width: 100%;
   background-color: white;
-
 }
 .book {
   width: 100%;
   background-color: #121212;
   color: white;
-  border-bottom: 2px solid black;
-    
 }
-.follow-text3{
-  
-  border-bottom: 2px solid black;
+.follow-text3 {
   padding-bottom: 30px;
-  
   display: flex;
-  flex-direction: column; /* Stack first phone-item above second */
-  gap: 8px; /* Space between the two phone lines */
+  flex-direction: column;
+  gap: 8px;
 }
-
 .phone-item {
   display: flex;
-  align-items: center; /* Icon & number in same line */
-  gap: 8px; /* Space between icon & number */
+  align-items: center;
+  gap: 8px;
 }
-
 .phone-item h1, 
 .phone-item h5 {
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
-
-
 .follow-text img {
   width: 20px;
   height: 20px;
@@ -66,44 +51,33 @@
 .follow-text2 h1 {
   font-family: Gilroy;
   font-size: 1.3rem;
-  font-style: normal;
   font-weight: 400;
-  border-bottom: 2px solid black;
   padding-bottom: 20px;
-  border-top: 2px solid black;
   padding-top: 10px;
 }
 .follow-text3 h1 {
   font-family: Gilroy;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
-  
 }
 .follow-text3 img {
-width:20px;
-height: 20px;
- margin-right: 8px;
+  width:20px;
+  height: 20px;
+  margin-right: 8px;
 }
 .follow-text3 h5 {
   font-family: Gilroy;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 400;
-
 }
 .follow-text4 h1 {
   font-family: Gilroy;
   font-size: 1.3rem;
-  font-style: normal;
   font-weight: 400;
-  border-bottom: 2px solid black;
-  padding-bottom: 20px;
 }
 .follow-text5 h6 {
   font-family: Gilroy;
   font-size: 0.8rem;
-  font-style: normal;
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -115,53 +89,273 @@ height: 20px;
 .follow-text5 h4 {
   font-family: Gilroy;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 700;
   margin-top: -20px;
   margin-left: 25px;
   color: #555;
-
-}
-.follow-text5 {
-border-bottom: 2px solid black;
-padding-bottom: 30px;
-}
-.follow-text5 h1 {
-  font-family: Gilroy;
-  font-size: 1.3rem;
-  font-style: normal;
-  font-weight: 400;
-  border-bottom:2px solid black;
-  padding-bottom: 20px;
 }
 @media (min-width: 768px) {
   .number {
     width: 50%;
     margin: 0 auto; 
-    
   }
   .book {
     width: 50%;
     margin: 0 auto;
-    
   }
-  .follow-text {
-    padding-bottom: 100px;
-  }
-  .follow-text3  {
+  .follow-text3 {
     border-bottom: none;
   }
   .follow-text5 h1 {
     border-bottom: none;
   }
- .follow-items {
+  .follow-text2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .follow-container {
+    margin-left: 50px;
+  }
+}
+===== END ORIGINAL ===== */
+
+
+/* ===== NEW MOBILE-FIRST RESPONSIVE VERSION ===== */
+
+/* General container */
+.button-group {
   display: flex;
   flex-direction: column;
- }
+  
+}
+
+.follow-container {
+  
+  font-family: Gilroy;
+}
+.follow-text h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: Gilroy; 
+}
+.follow-text h5 {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Gilroy;
+  color: #555;
+}
+.follow-text button {
+  padding: 12px 24px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+.number {
+  border: 2px solid black;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: white;
+}
+.book {
+  width: 100%;
+  background-color: #121212;
+  color: white;
+}
+
+/* Top section */
+
+
+
+/* Contact section (mobile stacked) */
+.contact-sections {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100%;
+  padding-bottom: 30px;
+}
+.contact-column {
+  padding: 15px 0;
+  text-align: center;
+  
+}
+.contact-column h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  
+  width: 100%;
+  
+}
+
+/* Phone items */
+.phone-item {
+  display: flex;
+  color: #121212;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.phone-item img {
+  width: 20px;
+  height: 20px;
+  
+}
+.phone-item h1, 
+.phone-item h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Address items */
+.address-item {
+  display: flex;
+  justify-content: center;
+  margin-left: 70px;
+  gap: 8px;
+}
+.address-item img {
+  width: 20px;
+  height: 20px;
+}
+.address-item h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+.contact-column h6 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.contact-headings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: Gilroy;
+  font-weight: 300;
+  padding-bottom: 5px;
+  color: #121212;
+}
+
+.contact-headings h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+
+/* Tablet/Desktop layout */
+@media (min-width: 768px) {
+  .contact-headings {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal space */
+  text-align: center;
+  border-bottom: 2px solid black;
+  font-size: 1.3rem;
+  
+  
+}
+
+.contact-headings h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 15px 0;
+  height: 100%;
+}
+.contact-headings > *:first-child,
+.contact-content > *:first-child {
+  border-right: 2px solid black; /* this draws the continuous line */
+}
+
+/* Content grid */
+.contact-content {
+  display: grid;
+grid-template-columns: 1fr 1fr;
+  text-align: center;
+  align-items: stretch;
+        /* aligns items under headings */
+}
+
+/* Column styling */
+ .contact-column {
+  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* centers inner content horizontally */
+        /* ensure it matches full parent height */
+    justify-content: center;
+  height: 92%;
+
+      /* force full height of row */
+}
+.contact-sections {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
   
 
 }
 
 
+/* Phone items stacked */
+.phone-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center; /* keep centered */
+  margin-bottom: 8px;
+}
 
+.phone-item img {
+  width: 20px;
+  height: 20px;
+}
 
+/* Address items stacked */
+.address-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.address-item img {
+  width: 20px;
+  height: 20px;
+}
+
+  
+  .number, .book {
+    width: 100%; 
+    margin-bottom: 0;
+  }
+
+  /* Put them in one row */
+  
+   .button-group {
+    flex-direction: row;
+    
+  }
+
+  .button-group .number,
+  .button-group .book {
+    width: 100%;
+  }
+  
+  
+
+}
+@media screen and (min-width:1024px) {
+  .follow-container {
+    display: none;
+  }
+  
+}

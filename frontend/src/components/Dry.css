@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid black;/* Helps with responsiveness */
+  border-bottom: 2px solid black;
+  /* Helps with responsiveness */
 }
 .dry-details h2 {
 font-style: Regular italic;
@@ -13,6 +14,7 @@ font-family: Gilroy;
   align-items: center;
   gap: 10px;
   margin-top: 70px; 
+  
 }
 
 .shop-rows h3 {
@@ -38,7 +40,7 @@ display: block; /* Adjust as needed */
 
   .dry-image img {
     width: 170%;
-    height: auto;
+    height: 100%;
     border-right: 2px solid black;
   }
   .shop-rows {
@@ -52,3 +54,11 @@ display: block; /* Adjust as needed */
 
   }
 } 
+@media (min-width: 1024px) {
+    .dry-details h2 {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+
+}

@@ -1,0 +1,11 @@
+@media screen and (min-width: 1024px) {
+.main-flex {
+  display: flex;
+}
+.border {
+  border: 2px solid black;
+
+}
+}
+  
+

@@ -58,4 +58,95 @@ text-align: center;
   }
 
 }
-  
+@media screen and (min-width: 1024px) {
+  .service-container {
+    display: flex;
+    flex-direction: column; /* Title on top */
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .service-title {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: Gilroy;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .service-row {
+    display: flex;
+    flex-direction: row; /* Image left, details right */
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: none; 
+    margin: 0;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;/* keeps layout neat on large screens */
+  }
+
+  .service-image,
+  .service-details {
+    flex: 1;
+  }
+
+  .service-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+
+  .service-image img {
+    width: 100%;
+    max-width: none; /* prevents image from being too huge */
+    height: auto;
+    object-fit: cover;
+    border-bottom: none;
+    
+  }
+
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* keep text aligned left for readability */
+    padding-left: 40px;
+    
+  }
+
+  .service-details h2 {
+    font-size: 0.8rem;
+    font-weight: 200;
+    font-family: Gilroy;
+    margin-bottom: 20px;
+  }
+
+  .service-details h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: Gilroy;
+    margin-bottom: 20px;
+  }
+
+  .service-details p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Gilroy;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .service-button {
+    width: 30%;
+    padding: 12px;
+    background-color: white;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    margin-left: 190px;
+    
+  }
+}

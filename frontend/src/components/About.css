@@ -1,9 +1,9 @@
 .about-container {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid black;  
+}
 
-
-  
-  
+.about-content {
+  width: 100%;
 }
 .about-content h1 {
   border-bottom: 2px solid black;
@@ -54,3 +54,70 @@
     display: block; /* Ensures auto margins work on non-flex containers */
   }
 }
+@media (min-width: 1024px) {
+  .about-content h1 {
+    padding-bottom: 330px;
+    
+    
+    
+  }
+  .about-container {
+    display: flex;
+    flex-direction: row;     /* side by side */
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 1024px;
+  }
+  .about-content {
+    flex: 1;
+    display: flex;
+    padding-left: 100px;
+   max-width: 349px; 
+    border-top: 2px solid black;
+  }
+
+  .about-divider {
+    width: 2px;
+    background-color: black;
+
+    align-self: stretch;    
+  }
+
+
+  .about-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    gap: 1rem;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.about-btn {
+  font-size: 12px;
+  padding: 12px 24px;
+  background-color: white;
+  cursor: pointer;
+  color: #121212;
+  border: 1px solid #121212;
+  width: fit-content;       /* keeps button size to content */
+  align-self: flex-start;
+  margin-bottom: 30px;   /* keeps button aligned to left */
+}
+ .about-content h1 {
+    border-bottom: none; /* underline only here */
+  }
+
+
+  
+}
+
+
+
+  
+  
+  
+
+  
+
+

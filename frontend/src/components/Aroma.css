@@ -52,3 +52,11 @@ display: block; /* Adjust as needed */
 
   }
 } 
+@media (min-width: 1024px) {
+
+
+.aroma-details h2 {
+  margin-top: 0;
+  margin-left: 0;
+}
+}
