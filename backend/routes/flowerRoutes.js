@@ -3,7 +3,7 @@ const router = express.Router();
 const flowerController = require('../controllers/flowerController');
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const cloudinary = require('../Utilities/Cloudinary.js');
+const cloudinary = require('../Utilities/cloudinary.js');
 
 // Configure Multer to use Cloudinary
 const storage = new CloudinaryStorage({

@@ -1,5 +1,5 @@
 const Flower = require('../models/flowerModel');
-const cloudinary = require('../Utilities/Cloudinary'); 
+const cloudinary = require('../Utilities/cloudinary'); 
 
 // Get all flowers
 exports.getAllFlowers = async (req, res) => {
