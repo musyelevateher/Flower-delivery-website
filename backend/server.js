@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const expressListEndpoints = require('express-list-endpoints');
 const path = require('path');
  //const passport = require("./routes/stripe")
-require("./Utilities/Passport")
+  //require("./Utilities/Passport")
 
 
 dotenv.config();
