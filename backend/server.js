@@ -4,6 +4,10 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const expressListEndpoints = require('express-list-endpoints');
 const path = require('path');
+const passport = require("./routes/stripe")
+require("./Utilities/Passport")
+
+
 dotenv.config();
 
 const app = express();
@@ -18,7 +22,6 @@ mongoose.connect(process.env.MONG_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/auth', require('./routes/authRoutes'));
 const flowerRoutes = require('./routes/flowerRoutes');

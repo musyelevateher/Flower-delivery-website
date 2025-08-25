@@ -2,29 +2,30 @@ const express = require('express');
 const router = express.Router();
 const flowerController = require('../controllers/flowerController');
 const multer = require('multer');
-const path = require('path');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('../Utilities/Cloudinary.js');
 
-
-// ...existing code...
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '..', 'uploads')); // Use absolute path
+// Configure Multer to use Cloudinary
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'flowers', // Cloudinary folder name
+    allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+    public_id: (req, file) => `${Date.now()}-${file.originalname}`,
   },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
-  }
 });
-const upload = multer({ storage: storage });
-// ...existing code...
 
+const upload = multer({ storage });
+
+// Routes
 router.get('/', flowerController.getAllFlowers);
 
-
+// Upload image -> goes to Cloudinary
 router.post('/', upload.single('image'), flowerController.createFlower);
-
 
 router.delete('/:id', flowerController.deleteFlower);
 
 router.patch('/:id', upload.single('image'), flowerController.updateFlower);
-console.log('✅ flowerRoutes.js loaded');
+
+console.log('✅ flowerRoutes.js loaded with Cloudinary + Multer');
 module.exports = router;

@@ -1,5 +1,7 @@
 const Flower = require('../models/flowerModel');
+const cloudinary = require('../Utilities/Cloudinary'); 
 
+// Get all flowers
 exports.getAllFlowers = async (req, res) => {
   try {
     const flowers = await Flower.find();
@@ -9,20 +11,21 @@ exports.getAllFlowers = async (req, res) => {
   }
 };
 
+// Create flower
 exports.createFlower = async (req, res) => {
-  console.log("BODY:", req.body);
-  console.log("FILE:", req.file);
-
   try {
     const { name, description, price, category } = req.body;
-    const image = req.file ? req.file.filename : null; // Only the filename
+
+    const image = req.file ? req.file.path : null;
+    const imagePublicId = req.file ? req.file.filename : null;
 
     const flower = new Flower({
       name,
       description,
       price,
       category,
-      image: image,
+      image,
+      imagePublicId,
     });
 
     const savedFlower = await flower.save();
@@ -33,47 +36,51 @@ exports.createFlower = async (req, res) => {
   }
 };
 
-
+// Delete flower
 exports.deleteFlower = async (req, res) => {
   try {
     const { id } = req.params;
-    if (!id) {
-      return res.status(400).json({ message: 'Flower ID is required' });
+
+    const flower = await Flower.findByIdAndDelete(id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    if (flower.imagePublicId) {
+      await cloudinary.uploader.destroy(flower.imagePublicId);
     }
-    const flower = await Flower.findByIdAndDelete(req.params.id);
-    if (!flower) {
-      return res.status(404).json({ message: 'Flower not found' });
-    }
+
     res.json({ message: 'Flower deleted successfully' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-
+// Update flower
 exports.updateFlower = async (req, res) => {
   try {
-    
     const { name, description, price, category } = req.body;
-    const updateData = { name, description, price, category };
     const { id } = req.params;
-    if (!id) {  
-      return res.status(400).json({ message: 'Flower ID is required' });
-    }
 
+    let flower = await Flower.findById(id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    // Update image if a new one was uploaded
     if (req.file) {
-      updateData.image = req.file.filename;
+      if (flower.imagePublicId) {
+        await cloudinary.uploader.destroy(flower.imagePublicId); // delete old image
+      }
+      flower.image = req.file.path;
+      flower.imagePublicId = req.file.filename;
     }
 
-    const flower = await Flower.findByIdAndUpdate( req.params.id,
-      updateData,
-      { new: true }
-    );
+    // Update other fields
+    flower.name = name || flower.name;
+    flower.description = description || flower.description;
+    flower.price = price || flower.price;
+    flower.category = category || flower.category;
 
-    if (!flower) {
-      return res.status(404).json({ message: 'Flower not found' });
-    }
-    res.json(flower);
+    const updatedFlower = await flower.save();
+    res.json(updatedFlower);
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
