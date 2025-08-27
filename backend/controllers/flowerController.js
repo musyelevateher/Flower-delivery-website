@@ -74,16 +74,15 @@ exports.updateFlower = async (req, res) => {
     let flower = await Flower.findById(id);
     if (!flower) return res.status(404).json({ message: 'Flower not found' });
 
-    // Update image if a new one was uploaded
+    // Replace image if new one uploaded
     if (req.file) {
       if (flower.imagePublicId) {
-        await cloudinary.uploader.destroy(flower.imagePublicId); // delete old image
+        await cloudinary.uploader.destroy(flower.imagePublicId); // remove old image
       }
-      flower.image = req.file.path;
-      flower.imagePublicId = req.file.filename;
+      flower.image = req.file.path;         // secure_url
+      flower.imagePublicId = req.file.filename; // public_id
     }
 
-    // Update other fields
     flower.name = name || flower.name;
     flower.description = description || flower.description;
     flower.price = price || flower.price;
@@ -91,8 +90,9 @@ exports.updateFlower = async (req, res) => {
 
     const updatedFlower = await flower.save();
     res.json(updatedFlower);
-
   } catch (err) {
+    console.error("Error updating flower:", err);
     res.status(500).json({ message: err.message });
   }
 };
+
