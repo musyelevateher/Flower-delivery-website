@@ -16,8 +16,17 @@ exports.createFlower = async (req, res) => {
   try {
     const { name, description, price, category } = req.body;
 
-    const image = req.file ? req.file.path : null;
-    const imagePublicId = req.file ? req.file.filename : null;
+    let image = null;
+    let imagePublicId = null;
+
+    // Upload to Cloudinary if file exists
+    if (req.file) {
+      const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: "flowers", // optional: keep images organized in a folder
+      });
+      image = result.secure_url;
+      imagePublicId = result.public_id;
+    }
 
     const flower = new Flower({
       name,
@@ -32,9 +41,11 @@ exports.createFlower = async (req, res) => {
     res.status(201).json(savedFlower);
     console.log("Flower created:", savedFlower);
   } catch (err) {
+    console.error("Error creating flower:", err); // log for debugging
     res.status(500).json({ message: err.message });
   }
 };
+
 
 // Delete flower
 exports.deleteFlower = async (req, res) => {
