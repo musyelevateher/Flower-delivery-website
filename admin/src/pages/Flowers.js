@@ -59,11 +59,11 @@ function Flowers() {
               ) : (
                 <>
                   <img
-                    src={`https://flower-delivery-website-backend-v9d6.onrender.com/uploads/${flower.image}`}
-
+                    src={flower.image} // ✅ fixed: use Cloudinary URL directly
                     alt={flower.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }}
                   />
+
                   {/* X icon in top-right corner */}
                   <span
                     onClick={() => handleDelete(flower._id)}

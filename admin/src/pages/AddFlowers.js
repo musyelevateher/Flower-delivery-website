@@ -26,34 +26,35 @@ function AddFlowers() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', flowerData.name);
-    formData.append('category', flowerData.category);
-    formData.append('price', flowerData.price);
-    formData.append('description', flowerData.description);
-    formData.append('image', imageFile);
+  e.preventDefault();
+  const formData = new FormData();
+  formData.set('name', flowerData.name);
+  formData.set('category', flowerData.category);
+  formData.set('price', flowerData.price);
+  formData.set('description', flowerData.description);
+  if (imageFile) formData.set('image', imageFile); // ✅ matches upload.single('image')
 
-    try {
-      await axios.post(
-        'https://flower-delivery-website-backend-v9d6.onrender.com/api/flowers',
-        formData,
-        { headers: { 'Content-Type': 'multipart/form-data' } }
-      );
-      alert('Flower added successfully!');
-      setFlowerData({
-        name: '',
-        category: '',
-        price: '',
-        description: '',
-      });
-      setImageFile(null);
-      setPreview(null);
-    } catch (err) {
-      console.error(err);
-      alert('Error adding flower.');
-    }
-  };
+  try {
+    await axios.post(
+      'https://flower-delivery-website-backend-v9d6.onrender.com/api/flowers',
+      formData,
+      { headers: { 'Content-Type': 'multipart/form-data' } }
+    );
+    alert('Flower added successfully!');
+    setFlowerData({
+      name: '',
+      category: '',
+      price: '',
+      description: '',
+    });
+    setImageFile(null);
+    setPreview(null);
+  } catch (err) {
+    console.error(err);
+    alert('Error adding flower.');
+  }
+};
+
 
   return (
     <div style={{ padding: '20px', maxWidth: '400px', margin: '0 auto' }}>
