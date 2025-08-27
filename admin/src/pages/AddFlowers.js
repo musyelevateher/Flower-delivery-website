@@ -36,7 +36,7 @@ function AddFlowers() {
 
   try {
     await axios.post(
-      'https://flower-delivery-website-backend-v9d6.onrender.com/api/flowers',
+      'http://localhost:4000/api/flowers/',
       formData,
       { headers: { 'Content-Type': 'multipart/form-data' } }
     );

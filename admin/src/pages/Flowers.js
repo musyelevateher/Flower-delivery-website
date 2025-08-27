@@ -103,7 +103,7 @@ function Flowers() {
                       <span style={{ color: 'red' }}>Name:</span></strong> {flower.name}
                   </p>
                   <p><strong style={{ color: 'red' }}>Category:</strong> {flower.category}</p>
-                  <p><strong style={{ color: 'red' }}>Price:</strong> ₦{flower.price}</p>
+                  <p><strong style={{ color: 'red' }}>Price:</strong> ${flower.price}</p>
                   <p><strong style={{ color: 'red' }}>Description:</strong> {flower.description}</p>
                   {/* Delete button under description */}
                   <button
