@@ -21,14 +21,14 @@ exports.createFlower = async (req, res) => {
 
     // Multer-storage-cloudinary already uploaded the file
     if (req.file) {
-      image = req.file.path;          // Cloudinary secure_url
-      imagePublicId = req.file.filename; // Cloudinary public_id
+      image = req.file.path;             // secure_url
+      imagePublicId = req.file.filename || req.file.public_id;
     }
 
     const flower = new Flower({
       name,
       description,
-      price,
+      price: Number(price),,
       category,
       image,
       imagePublicId,
@@ -69,20 +69,19 @@ exports.updateFlower = async (req, res) => {
     const { id } = req.params;
 
     let flower = await Flower.findById(id);
-    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+    if (!flower) return res.status(404).json({ message: "Flower not found" });
 
-    // Replace image if new one uploaded
     if (req.file) {
       if (flower.imagePublicId) {
         await cloudinary.uploader.destroy(flower.imagePublicId); // remove old image
       }
-      flower.image = req.file.path;         // secure_url
-      flower.imagePublicId = req.file.filename; // public_id
+      flower.image = req.file.path;
+      flower.imagePublicId = req.file.filename || req.file.public_id;
     }
 
     flower.name = name || flower.name;
     flower.description = description || flower.description;
-    flower.price = price || flower.price;
+    flower.price = price ? Number(price) : flower.price;
     flower.category = category || flower.category;
 
     const updatedFlower = await flower.save();
@@ -92,4 +91,5 @@ exports.updateFlower = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
 
