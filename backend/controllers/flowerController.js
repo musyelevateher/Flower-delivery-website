@@ -19,13 +19,10 @@ exports.createFlower = async (req, res) => {
     let image = null;
     let imagePublicId = null;
 
-    // Upload to Cloudinary if file exists
+    // Multer-storage-cloudinary already uploaded the file
     if (req.file) {
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "flowers", // optional: keep images organized in a folder
-      });
-      image = result.secure_url;
-      imagePublicId = result.public_id;
+      image = req.file.path;          // Cloudinary secure_url
+      imagePublicId = req.file.filename; // Cloudinary public_id
     }
 
     const flower = new Flower({
@@ -41,7 +38,7 @@ exports.createFlower = async (req, res) => {
     res.status(201).json(savedFlower);
     console.log("Flower created:", savedFlower);
   } catch (err) {
-    console.error("Error creating flower:", err); // log for debugging
+    console.error("Error creating flower:", err);
     res.status(500).json({ message: err.message });
   }
 };
