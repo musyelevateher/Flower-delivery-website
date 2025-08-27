@@ -28,7 +28,7 @@ exports.createFlower = async (req, res) => {
     const flower = new Flower({
       name,
       description,
-      price: Number(price),,
+      price: Number(price),
       category,
       image,
       imagePublicId,
