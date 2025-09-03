@@ -1,0 +1,182 @@
+.story img {
+  max-width: 100%; 
+  height: auto;      
+  display: block;  
+  margin: 0 auto;    
+}
+.hero img {
+  max-width: 100%; 
+  height: auto;      
+  display: block;  
+  margin: 0 auto;    
+}
+.hero h1 {
+  font-size: 12px;
+  font-family: Gilroy;
+  font-weight: 500;
+  font-style: medium;
+  text-align: center;
+  
+}
+.hero h2 {
+  font-size: 26px;
+  font-weight: 500;
+  font-style: medium;
+  font-family: Gilroy;
+  text-align: center;
+
+}
+.hero p {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Gilroy;
+  font-style: Regular;
+  padding-left: 15px;
+
+}
+.discover h1 {
+    font-weight: 600;
+  font-size: 38px;
+  font-family: Gilroy;
+  font-style: Semibold;
+  text-align: center;
+}
+.discover p {
+  font-weight: 500;
+  font-size: 25px;
+  font-family: Gilroy;
+  font-style: medium;
+  text-align: center;
+  
+}
+.market {
+ display: block;           /* makes it take full line so margin works */
+  margin: 2rem auto;        /* centers horizontally */
+  padding: 1rem 2.5rem;     /* bigger button */
+  font-size: 1.2rem;        /* larger text */
+  background-color: #222;   /* example background */
+  color: white;             /* text color */
+  border: none;
+  border-radius: 2px;       /* rounded corners */
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  width: 80%;
+  
+}
+.market:hover {
+  background-color: #444;   /* darker on hover */
+  transform: scale(1.05);
+}
+.simple {
+  border-bottom: 2px solid black;
+  padding-bottom: 30px;
+}
+.market-container {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .images-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* vertically align */
+  gap: 2rem;
+  width: 100%;
+  margin-top: 0;
+  
+}
+
+.story {
+  flex: 1;                 /* both get equal width */
+
+}
+
+.images-row img {
+  width: 100%;             /* force both images to stretch equally */
+  height: auto;            /* match heights */
+  display: block;      /* adjust as needed */
+  object-fit: cover;       /* ensures images fill space without shrinking oddly */
+}
+
+
+
+.hero-text {
+  text-align: center; /* center the text under both images */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;   /* so it stacks on small screens */
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+  align-items: stretch;
+  position: relative;
+  
+}
+
+
+  
+
+  
+.simple {
+  border-bottom: none;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;   /* stacks on smaller screens */
+  padding-bottom: 2rem; /* space above border */
+  border-bottom: 2px solid ; /* light gray bottom border */
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  margin-top: 0;
+  
+}
+
+.hero-text {
+  flex: 1;
+  text-align: center;
+  max-width: 600px;
+              /* spacing after the block */
+                /* keeps your headings and text centered */
+}
+
+.story-section {
+  width: 100%;               /* full width for the border */
+  border-bottom: 2px solid black; 
+  padding-bottom: 1.5rem;   /* space between text and border */
+  margin-bottom: 2rem;       /* spacing below section */
+  box-sizing: border-box;     /* include padding in width */
+}
+
+.story-section .hero-text {
+  max-width: 600px;          /* limit text width for readability */
+  margin: 0 auto;            /* center the text */
+  text-align: center;        /* center headings and paragraph */
+}
+.market {
+  width:30%;
+}
+
+}
+
+
+
+  

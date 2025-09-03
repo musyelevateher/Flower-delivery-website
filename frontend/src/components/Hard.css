@@ -1,31 +1,42 @@
+ .huwaida img { 
+  object-fit: cover; 
+  width: 100%; 
+} 
+.flexation {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
 .flexation {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   font-family: Gilroy;
-  
+  border-bottom: 2px solid black;
 }
 .To-label { 
   max-width: 594px;
  } 
  .forget  { 
   max-width: 490px; 
-  border-bottom: 2px solid black;
   border-right: 2px solid black;
-  
-  
  } 
  .huwaida img { 
   object-fit: cover; 
   width: 574px; 
 } 
-.musy { 
-  border-bottom: 2px solid black;
-  padding-bottom: 250px;
+.musy {
   display: flex;
   flex-direction: row;
- } 
+  align-items: stretch;   
+  justify-content: center;
+}
+.hany {
+  width: 2px;              /* thickness */
+  background-color: black;
+  margin-top: -5px;
+  margin-left: 50px; /* vertical divider */
+}
  .abba h1 { 
   font-size: 1.5rem; 
   font-weight: 400; 
@@ -52,11 +63,8 @@
   grid-template-columns: 1fr 1fr; /* equal space */ 
   text-align: center;
   border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid;
   margin-top: 30px;
-  
-   
-
   font-size: 1.3rem; 
 } 
 .conts h2 { 
@@ -74,12 +82,11 @@
 .con::after {
   content: "";
 position: absolute;
-  top: 0;       /* start at very top */
-  bottom: 0;    /* stretch all the way to bottom */
-  left: 50%;    /* center between the two equal columns */
+  top: 30px;  
+  bottom: 0;    
+  left: 50%;    
   border-left: 2px solid black;
-  height: 667px;
-  
+  height: 387px;
 }
 
 .cumn { 
@@ -122,19 +129,18 @@ position: absolute;
  }
  .amatu {
   margin-top: 30px;
-  margin-left:50px;
+  margin-left:20px;
  }
 .con {
   display: grid;
   grid-template-rows: auto 1fr;
-  position: relative;              /* 👈 important: anchor for ::after */
-    /* bottom border */
+  position: relative;           
+  
 }
-
- 
- 
- 
- 
-
+.ati {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-style: medium;
+}
 }
 

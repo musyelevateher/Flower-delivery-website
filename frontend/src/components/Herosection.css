@@ -1,7 +1,7 @@
 .iv {
   display: flex;
-  flex-direction: column; /* image above text */
-  align-items: center; /* default mobile: center */
+  flex-direction: column; 
+  align-items: center; 
   justify-content: center;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -34,18 +34,16 @@
 /* Desktop */
 @media screen and (min-width: 1024px) {
   .iv {
-    align-items: flex-start; /* push content to left */
-    text-align: left; /* text also left aligned */
-     /* optional spacing from edge */
+    align-items: flex-start; 
+    text-align: left; 
   }
 
   .gift {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;
-  max-width: 450px; /* smaller width = wraps text */
+  max-width: 450px; 
   color: #555;
-  
   font-family: Gilroy;
 }
 }

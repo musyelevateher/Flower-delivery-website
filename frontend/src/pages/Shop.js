@@ -1,10 +1,18 @@
 import React from "react";
+import Fresh from '../components/Fresh'
+import Dry from '../components/Dry'
+import Live from '../components/Live'
+import Aroma from '../components/Aroma'
+import Freshner from '../components/Freshner'
 
 const Shop = () => {
   return (
     <div>
-      <h1>Shop Page</h1>
-      <p>This is where your products will appear.</p>
+     <Fresh />
+      <Dry />
+      <Live />
+      <Aroma />
+      <Freshner />
     </div>
   );
 };

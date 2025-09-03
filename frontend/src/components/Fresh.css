@@ -1,17 +1,36 @@
 .fresh-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid black;
+  
   /* Helps with responsiveness */
 }
+.fresh-details,
+.fresh-image {
+  flex: 1;            /* each takes 50% */
+  display: flex;      /* so content can stretch inside */
+  flex-direction: column;
+}
+.fresh-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes content apart (top & bottom) */
+}
+
+.shop-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;  
+  padding-left: 50px;        /* remove big margins you had */
+}
+
 .fresh-details h2 {
 font-style: Regular italic;
 font-family: Gilroy;
-}
-.shop-row {
-display: flex;
-align-items: center;
-gap: 10px;
 }
 .shop-row h3 {
 font-size: 0.7rem;
@@ -20,15 +39,25 @@ font-size: 0.7rem;
 .ow {
 width: 20px;
 height: auto;
+margin-top: 10px;
 }
 .fresh-image img {
 width: 100%;
-display: block; /* Adjust as needed */
+height: 100%;
+object-fit: cover;
+display: block;
+ /* Adjust as needed */
 }
-.fresh-details {
-  border-bottom: 2px solid black;
 
+.fresh-link {
+  text-decoration: none; /* remove underline */
+  color: inherit;       /* keep text color */
+  display: inline-block;
 }
+.fresh-link:hover {
+  opacity: 0.8; /* optional hover effect */
+}
+
 @media (min-width: 768px) {
   .fresh-details,
   .fresh-image {

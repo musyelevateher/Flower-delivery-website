@@ -1,62 +1,84 @@
 .aroma-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;   /* ensures both columns fill full height */
   justify-content: space-between;
-  border-bottom: 2px solid black;/* Helps with responsiveness */
+  border-bottom: 2px solid black;
+  width: 100%;
 }
+.aroma-details, .aroma-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.aroma-image img {
+  width: 100%;
+  height: 100%;       /* stretch to touch top and bottom border */
+  object-fit: cover;  /* fill while keeping aspect ratio */
+  display: block;
+  border-right: 2px solid black;
+}
+
+.aroma-details {
+  flex: 1; /* smaller side column */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding-left: 10px;/* title at top, shop row at bottom */
+  
+}
+
 .aroma-details h2 {
-font-style: Regular italic;
-font-family: Gilroy;
+
+  font-family: Gilroy;
+  
+   /* no push-down */
 }
-.shop-rows {
+
+.shop-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 70px; 
+  margin: 0;
+  padding-left: 50px;
 }
 
-.shop-rows h3 {
-font-size: 0.7rem;
-font-weight: 400;
-white-space: nowrap;
+.shop-row h3 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  white-space: nowrap;
 }
-.ows {
-width: 20px;
-height: auto;
-color: #555;
+
+.ow {
+  width: 20px;
+  height: auto;
+  
 }
-.aroma-image img {
-width: 100%;
-display: block; /* Adjust as needed */
+
+.aroma-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
 }
+.aroma-link:hover {
+  opacity: 0.8;
+}
+
+/* Medium screens */
 @media (min-width: 768px) {
-.aroma-details,
   .aroma-image {
-    flex: 1;
-    max-width: 30%;
+    flex: 2;   /* make image take about 70% */
   }
-
-  .aroma-image img {
-    width: 170%;
-    height: auto;
-    border-right: 2px solid black;
+  .aroma-details {
+    flex: 1;   /* details 30% */
   }
-  .shop-rows {
-    padding-top: 170px;
-    margin-left: 150px;
-  }
-  .aroma-details h2 {
-    font-size: 2rem;
-    margin-left: 50px;
-    margin-top: 50px;
-
-  }
-} 
-@media (min-width: 1024px) {
-
-
-.aroma-details h2 {
-  margin-top: 0;
-  margin-left: 0;
 }
+
+/* Larger screens */
+@media (min-width: 1024px) {
+  .aroma-details h2 {
+    margin: 0 0 20px 0; /* little spacing below title */
+  }
 }

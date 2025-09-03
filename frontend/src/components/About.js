@@ -1,7 +1,12 @@
 import React from 'react';
 import './About.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const About = () => {
+   const navigate = useNavigate();
+
   return (
     <div className="about-container">
       <div className="about-content">
@@ -26,7 +31,9 @@ const About = () => {
         </p>
 
         {/* ✅ moved button here */}
-        <button className="about-btn">LEARN MORE</button>
+        <button className="about-btn"onClick={() => navigate("/about")}>Learn More</button>
+        
+    
       </div>
     </div>
   );

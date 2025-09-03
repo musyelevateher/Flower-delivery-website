@@ -67,6 +67,19 @@
   align-items: center;
   gap: 1rem;
 }
+.cart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between divider and icon */
+  cursor: pointer;
+
+}
+
+.cart-wrapper .divider {
+  width: 2px;
+  height: 100%;
+  background-color: black;
+}
 
 /* Dropdown menus (mobile only) */
 .dropdown {
@@ -126,7 +139,6 @@
   background: black;
 }
 
-
 /* Left vs Right spacing */
 .left-menu {
   margin-right: auto;
@@ -154,6 +166,9 @@
     height: 43px;
     margin-top: -10px;
   }
+  .cart-wrapper {
+    display: none;
+  }
 
   
 
@@ -173,3 +188,5 @@
  
 
 }
+
+

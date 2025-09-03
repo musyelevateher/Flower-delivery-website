@@ -1,0 +1,15 @@
+.follow-div {
+  display: block;
+}
+
+.hard-div {
+  display: none;}
+
+@media screen and (min-width: 1024px){
+  .follow-div {
+    display: none;
+  }
+  .hard-div {
+    display: block;
+  }
+}

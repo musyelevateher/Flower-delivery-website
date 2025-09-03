@@ -1,10 +1,14 @@
 import React from "react";
-
+import Follow from "../components/Follow"
+import Hard from "../components/Hard"
+import "./Contact.css"
 const Contact = () => {
   return (
     <div>
-      <h1>Shop Page</h1>
-      <p>This is where your products will appear.</p>
+      <div className="follow-div"><Follow />
+</div>
+      <div className="hard-div"><Hard />
+</div>
     </div>
   );
 };

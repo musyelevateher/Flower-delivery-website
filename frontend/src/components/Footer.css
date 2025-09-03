@@ -3,24 +3,21 @@
   font-size: 1.2rem;
   font-weight: 200;
   color: #555;
-  
-
 }
 .mail {
   width: 100%;
   padding: 12px 12px;
   background-color: white;
-  font-size: 14px; /* smaller text = slimmer input */
+  font-size: 14px; 
   border: 1px solid #ccc;
   max-width: 400px; 
   box-sizing: border-box;
-
 }
 .footer-details button {
 width: 100%;
   padding: 12px 12px;
   background-color: black;
-  font-size: 14px; /* smaller text = slimmer button */
+  font-size: 14px;
   border: 1px solid #ccc;
   margin-top: 20px;
   color: white;
@@ -28,7 +25,6 @@ width: 100%;
   box-sizing: border-box;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  
 }
 .footer-text h1 {
   font-family: Gilroy;
@@ -44,7 +40,6 @@ width: 100%;
   font-family: Gilroy;
   font-size: 1.2rem;
   font-weight: 200;
-
 }
 .footer-text h6 {
   font-family: Gilroy;
@@ -53,8 +48,6 @@ width: 100%;
   margin-top: -7px;
   color: #555;
 }
-  
-
 .footer-text {
   border-bottom: 2px solid black;
   padding-bottom: 20px;
@@ -63,19 +56,17 @@ width: 100%;
   font-family: Gilroy;
   font-size: 1.5rem;
   font-weight: 100;
-
 }
 .footer-text2 h5 {
-  font-family: Gilroy;
-  font-size: 1rem;
-  font-weight: 100;
-  color: #555;
+font-family: Gilroy;
+font-size: 1rem;
+font-weight: 100;
+color: #555;
 }
 .footer-text3 h1 {
   font-family: Gilroy;
   font-size: 1.2rem;
   font-weight: 200;
-
 }
 .footer-text3 h5{
   font-family: Gilroy;
@@ -87,42 +78,33 @@ width: 100%;
 @media (min-width: 768px) {
   .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns */
-    grid-template-rows: auto auto; /* 2 rows */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto;
   }
-
-  .footer-container > div {
-    padding: 20px;
-    border-bottom: 2px solid black; /* horizontal separator */
+.footer-container > div {
+  padding: 20px;
+  border-bottom: 2px solid black; 
   }
-
-  /* Remove bottom border for last row */
   .footer-container > div:nth-child(3),
   .footer-container > div:nth-child(4) {
     border-bottom: none;
   }
-
-  /* Add vertical border to left column only */
   .footer-container > div:nth-child(1),
   .footer-container > div:nth-child(3) {
     border-right: 2px solid black;
   }
 }
 @media (min-width: 1024px) {
-  
-  .footer-container {
+.footer-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-    grid-template-rows: auto; /* single row */
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: auto;
   }
-
-  .footer-container > div {
+.footer-container > div {
     padding: 20px;
-    border-bottom: none; /* remove bottom borders since all are in one row */
-    border-right: 2px solid black; /* vertical separator */
+    border-bottom: none;
+    border-right: 2px solid black;
   }
-
-  /* Remove right border from last column */
   .footer-container > div:last-child {
     border-right: none;
   }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import navMenuRight from '../assets/navmenu-right.svg'; 
+import navMenuRight from '../assets/shopping-bag.svg'; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +32,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="mobile-only icons-section">
+        <div className="cart-wrapper">
+          <div className="divider"></div>
           <img
             src={navMenuRight}
             alt="Cart"

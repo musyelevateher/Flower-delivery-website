@@ -1,0 +1,96 @@
+/* Base (mobile default): stacked vertically, 1 per row */
+.category-container {
+  display: block;
+  padding: 20px;
+}
+.category-heading {
+  margin: 0 0 20px 0;
+  text-align: left;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.category-icon {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto; 
+}
+.flower-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.flower-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.flower-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .category-heading {
+    text-align: center;
+    margin: 0 0 30px 0;
+    border-bottom: 2px solid black;
+    width: 100%;
+    padding: 0; 
+  }
+  .category-icon {
+    width: 100%;           /* take full width */
+    height: 250px;         /* fixed banner height */
+    object-fit: cover;     /* fills area, crops edges */
+    display: block;
+  }
+
+  .flower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .flower-card {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-right: 2px solid black; 
+    border-bottom: 2px solid black; /* divider between cols */
+
+  }
+    .flower-card:nth-child(2n) {
+    border-right: none;
+  }
+  .flower-card:nth-last-child(-n + 2) {
+    border-bottom: 2px solid black;
+}  
+}
+
+
+/* Desktop: you can choose 2 or 3 per row */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .category-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* heading takes 300px, flowers take rest */
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .category-heading {
+    border-bottom: none;
+    border-right: 2px solid black; /* vertical divider */
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  .flower-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    justify-items: center;
+  }
+}

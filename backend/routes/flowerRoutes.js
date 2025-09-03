@@ -10,7 +10,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: 'flowers', // Cloudinary folder name
-    allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg' ],
+    allowed_formats: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'],
     public_id: (req, file) => `${Date.now()}-${file.originalname}`,
   },
 });
@@ -19,6 +19,9 @@ const upload = multer({ storage });
 
 // Routes
 router.get('/', flowerController.getAllFlowers);
+
+// ✅ Add new category route
+router.get('/category/:categoryType', flowerController.getFlowersByCategory);
 
 // Upload image -> goes to Cloudinary
 router.post('/', upload.single('image'), flowerController.createFlower);
