@@ -108,7 +108,7 @@ useEffect(() => {
         {/* ✅ Mobile / small screens */}
         <div className="product-card" id="product-card">
           <div className="product-image">
-            <img src={flower.image} alt={flower.name} className="flower-image" />
+            <img src={flower.image} alt={flower.name} className="flower-image1" />
             <h5 className="producttext hh5">
               BOUQUETS FRESH FLOWERS / QUICK ORDER
             </h5>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import navMenuRight from '../assets/shopping-bag.svg'; 
 
