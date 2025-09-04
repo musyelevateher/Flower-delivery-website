@@ -250,4 +250,5 @@ a {
 @media (min-width: 1024px) and (width: 1440px) {
   .signin-box { max-width: 500px; }
   .signin-title { font-size: 25px; }
+  
 }

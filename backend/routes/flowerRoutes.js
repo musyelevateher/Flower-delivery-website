@@ -19,9 +19,18 @@ const upload = multer({ storage });
 
 // Routes
 router.get('/', flowerController.getAllFlowers);
+// Get a single flower by ID
+
+
+// Get random flowers (e.g., 4 random suggestions)
+
+
 
 // ✅ Add new category route
 router.get('/category/:categoryType', flowerController.getFlowersByCategory);
+router.get('/random', flowerController.getRandomFlowers);
+
+router.get('/:id', flowerController.getFlowerById);
 
 // Upload image -> goes to Cloudinary
 router.post('/', upload.single('image'), flowerController.createFlower);

@@ -1,5 +1,6 @@
 const Flower = require('../models/flowerModel');
 const cloudinary = require('../Utilities/cloudinary');
+const mongoose = require('mongoose');
 
 // ✅ Get all flowers
 exports.getAllFlowers = async (req, res) => {
@@ -37,9 +38,8 @@ exports.createFlower = async (req, res) => {
     let image = null;
     let imagePublicId = null;
 
-    // Multer-storage-cloudinary uploads automatically
     if (req.file) {
-      image = req.file.path; // Cloudinary secure_url
+      image = req.file.path; 
       imagePublicId = req.file.filename || req.file.public_id || null;
     }
 
@@ -69,7 +69,6 @@ exports.deleteFlower = async (req, res) => {
     const flower = await Flower.findByIdAndDelete(id);
     if (!flower) return res.status(404).json({ message: "Flower not found" });
 
-    // Delete from Cloudinary too
     if (flower.imagePublicId) {
       await cloudinary.uploader.destroy(flower.imagePublicId);
     }
@@ -91,16 +90,13 @@ exports.updateFlower = async (req, res) => {
     if (!flower) return res.status(404).json({ message: "Flower not found" });
 
     if (req.file) {
-      // delete old Cloudinary image if exists
       if (flower.imagePublicId) {
         await cloudinary.uploader.destroy(flower.imagePublicId);
       }
-
       flower.image = req.file.path;
       flower.imagePublicId = req.file.filename || req.file.public_id || null;
     }
 
-    // update fields only if provided
     flower.name = name || flower.name;
     flower.description = description || flower.description;
     flower.price = price ? Number(price) : flower.price;
@@ -111,6 +107,42 @@ exports.updateFlower = async (req, res) => {
     console.log("🌼 Flower updated:", updatedFlower);
   } catch (err) {
     console.error("Error updating flower:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+// ✅ Get flower by ID
+exports.getFlowerById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("🔎 Request received for flower ID:", id);
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      console.warn("⚠️ Invalid ObjectId received:", id);
+      return res.status(400).json({ message: "Invalid flower ID" });
+    }
+
+    const flower = await Flower.findById(id);
+    if (!flower) {
+      console.warn("⚠️ Flower not found in DB for ID:", id);
+      return res.status(404).json({ message: "Flower not found" });
+    }
+
+    console.log("✅ Flower found:", flower.name, flower._id);
+    res.json(flower);
+  } catch (err) {
+    console.error("❌ Error fetching flower by ID:", err.message);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+// ✅ Get random flowers
+exports.getRandomFlowers = async (req, res) => {
+  try {
+    const flowers = await Flower.aggregate([{ $sample: { size: 4 } }]);
+    res.json({ flowers });
+  } catch (err) {
+    console.error("Error fetching random flowers:", err);
     res.status(500).json({ message: "Server error" });
   }
 };

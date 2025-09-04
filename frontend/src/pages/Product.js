@@ -1,81 +1,10 @@
-// import React, { useState } from 'react';
-// import Navbar from '../Components/Navbar'; // Navigation bar component
-// import Footer from '../Components/Footer'; // Footer component
-// import '../Product.css'; // Custom CSS for product styling
-
-// // Importing product and related images
-// import Green from './assets/Green-flower.svg';
-// import Stepers from './assets/Steppers.svg';
-// import Grape from './Grape-fruit.svg';
-// import Lavender from './Lavender.svg';
-// import Matcha from './Matcha.svg';
-// import Ocean from './Ocean-mist.svg';
-
-// const Product = () => {
-//   return ( 
-//     <div>
-//       {/* Navbar Section */}
-//       <div>
-//         <Navbar />
-//       </div>
-
-//       {/* Main Product Image */}
-//       <div>
-//         <img src={Green} alt="Main Product" />
-//       </div>
-
-//       {/* Product Description & Actions */}
-//       <div>
-//         {/* Product category / breadcrumb */}
-//         <h5>BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
-
-//         {/* Product Title & Description */}
-//         <div>
-//           <h1>Rosy Delight - $100</h1>
-//           <p>
-//             Large exceptional bouquet composed of a selection of David Austin roses, 
-//             known for their beauty and subtle fragrance. The bouquet is accompanied 
-//             by seasonal foliage which will enhance these sublime flowers even more.
-//           </p>
-//         </div>
-
-//         {/* Quantity Selector + Add to Basket Button */}
-//         <div>
-//           <h1>Quantity</h1>
-//           <img src={Stepers} alt="Stepper Control" /> 
-//           <button>ADD TO BASKET</button>
-//         </div>
-//       </div>
-
-//       {/* Suggested Products Section */}
-//       <div className="Products-images">
-//         <h1>You may also like...</h1>
-//         <div>
-//           {/* Related product images */}
-//           <img src={Grape} alt="Grape Bouquet" />
-//           <img src={Lavender} alt="Lavender Bouquet" />
-//           <img src={Matcha} alt="Matcha Bouquet" />
-//           <img src={Ocean} alt="Ocean Mist Bouquet" />
-//         </div>
-//       </div>
-
-//       {/* Footer Section */}
-//       <div>
-//         <Footer />
-//       </div>
-//     </div>
-//   );
-// }
- 
-// export default Product;
-
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.css";
 import { HashLink } from "react-router-hash-link";
 
 const Product = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // flower._id from URL
   const [flower, setFlower] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -83,8 +12,7 @@ const Product = () => {
   const [randomFlowers, setRandomFlowers] = useState(null);
   const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
-
-
+  // ✅ Popup function
   const showPopup = (message, type) => {
     setPopup({ show: true, message, type });
     setTimeout(() => {
@@ -92,54 +20,54 @@ const Product = () => {
     }, 3000);
   };
 
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
+  // ✅ Quantity functions
+  const incrementCount = () => setCount(count + 1);
+  const decrementCount = () => count > 1 && setCount(count - 1);
 
-  const decrementCount = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
-  };
-
+  // ✅ Add to cart
   const handleAddToCart = () => {
-  const token = localStorage.getItem("token");
-  if (!token) {
-    showPopup("Please sign in to add items to your basket.", "error");
-    localStorage.setItem("redirectAfterLogin", window.location.pathname);
-    return;
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      showPopup("Please sign in to add items to your basket.", "error");
+      localStorage.setItem("redirectAfterLogin", window.location.pathname);
+      return;
+    }
 
-  const cartItem = {
-    flowerId: flower._id,
-    name: flower.name,
-    image: flower.image,
-    price: flower.price,
-    quantity: count,
+    const cartItem = {
+      flowerId: flower._id,
+      name: flower.name,
+      image: flower.image,
+      price: flower.price,
+      quantity: count,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItemIndex = existingCart.findIndex(
+      (item) => item.flowerId === cartItem.flowerId
+    );
+
+    if (existingItemIndex !== -1) {
+      existingCart[existingItemIndex].quantity += count;
+    } else {
+      existingCart.push(cartItem);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+    showPopup("Flower added to basket!", "success");
   };
 
-  const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingItemIndex = existingCart.findIndex(item => item.flowerId === cartItem.flowerId);
-
-  if (existingItemIndex !== -1) {
-    existingCart[existingItemIndex].quantity += count;
-  } else {
-    existingCart.push(cartItem);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(existingCart));
-  showPopup("Flower added to basket!", "success");
-};
-
-
+  // ✅ Fetch single flower by ID
   useEffect(() => {
     const fetchFlower = async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/flowers/${id}`);
+        const res = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/api/flowers/${id}`
+        );
+        if (!res.ok) throw new Error("Flower not found");
         const data = await res.json();
         setFlower(data);
       } catch (err) {
-        setError("Failed to load Flower details.");
+        setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -147,20 +75,24 @@ const Product = () => {
     fetchFlower();
   }, [id]);
 
-  useEffect(() => {
-    const fetchRandomFlowers = async () => {
-      try {
-        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/flowers/random`);
-        const data = await res.json();
-        setRandomFlowers(data.flowers);
-      } catch (err) {
-        setError("Failed to fetch flowers.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchRandomFlowers();
-  }, []);
+  // ✅ Fetch random flowers
+ // ✅ Fetch random flowers
+useEffect(() => {
+  const fetchRandomFlowers = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/flowers/random`
+      );
+      if (!res.ok) throw new Error("Failed to fetch random flowers");
+      const data = await res.json();
+      setRandomFlowers(data.flowers); // unwrap correctly
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  fetchRandomFlowers();
+}, []);
+
 
   if (loading) return <div className="flowerloading">Flower Loading...</div>;
   if (error) return <div>{error}</div>;
@@ -169,17 +101,20 @@ const Product = () => {
   return (
     <>
       {popup.show && (
-        <div className={`popup-message ${popup.type}`}>
-          {popup.message}
-        </div>
+        <div className={`popup-message ${popup.type}`}>{popup.message}</div>
       )}
 
       <div className="flower-detail-page">
+        {/* ✅ Mobile / small screens */}
         <div className="product-card" id="product-card">
           <div className="product-image">
-            <img src={flower.image} alt="flower pic" className="flower-image" />
-            <h5 className="producttext hh5">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
-            <h3 className="producttext hh3">{flower.name} - ${flower.price}</h3>
+            <img src={flower.image} alt={flower.name} className="flower-image" />
+            <h5 className="producttext hh5">
+              BOUQUETS FRESH FLOWERS / QUICK ORDER
+            </h5>
+            <h3 className="producttext hh3">
+              {flower.name} - ${flower.price}
+            </h3>
           </div>
 
           <div className="product-details">
@@ -189,9 +124,13 @@ const Product = () => {
           <div className="flower-quantity">
             <h3 className="qh">Quantity</h3>
             <div className="quantity-flex">
-              <button className="incdec" onClick={decrementCount}>-</button>
+              <button className="incdec" onClick={decrementCount}>
+                -
+              </button>
               <div className="count-display">{count}</div>
-              <button className="incdec" onClick={incrementCount}>+</button>
+              <button className="incdec" onClick={incrementCount}>
+                +
+              </button>
             </div>
           </div>
 
@@ -202,21 +141,31 @@ const Product = () => {
           </div>
         </div>
 
-        {/* 1440 screen */}
+        {/* ✅ Desktop / large screens */}
         <div className="container-1440" id="container-1440">
           <div className="image-1140">
-            <img src={flower.image} alt="flower pic" className="flower-image" />
+            <img src={flower.image} alt={flower.name} className="flower-image" />
           </div>
           <div className="details-1440">
-            <h5 className="producttext hh5">BOUQUETS FRESH FLOWERS / QUICK ORDER</h5>
-            <h3 className="producttext hh3">{flower.name} - ${flower.price}</h3>
+            <h5 className="producttext hh5">
+              BOUQUETS FRESH FLOWERS / QUICK ORDER
+            </h5>
+            <h3 className="producttext hh3">
+              {flower.name} - ${flower.price}
+            </h3>
             <p className="producttext pp">{flower.description}</p>
             <div className="qfl">
               <h3 className="qh">Quantity</h3>
               <div className="qbtn">
-                <button className="incdec" onClick={decrementCount}>-</button>
-                <div className="count-display"><span className="count">{count}</span></div>
-                <button className="incdec" onClick={incrementCount}>+</button>
+                <button className="incdec" onClick={decrementCount}>
+                  -
+                </button>
+                <div className="count-display">
+                  <span className="count">{count}</span>
+                </div>
+                <button className="incdec" onClick={incrementCount}>
+                  +
+                </button>
               </div>
             </div>
             <div className="add-basket-con">
@@ -227,32 +176,35 @@ const Product = () => {
           </div>
         </div>
 
+        {/* ✅ Suggestions */}
         <div className="ymal">
           <h3>You may also like…</h3>
         </div>
 
         <div className="suggestions">
-          {randomFlowers && randomFlowers.map((flower) => (
-            <HashLink to={`/product/${flower._id}#product-card`} key={flower._id}>
-              <div className="random-flower">
-                <img src={flower.image} alt={flower.name} />
-                <h5 className="rh5">{flower.name}</h5>
-                <p className="rp">${flower.price}</p>
-              </div>
-            </HashLink>
-          ))}
+          {randomFlowers &&
+            randomFlowers.map((fl) => (
+              <HashLink to={`/product/${fl._id}#product-card`} key={fl._id}>
+                <div className="random-flower">
+                  <img src={fl.image} alt={fl.name} />
+                  <h5 className="rh5">{fl.name}</h5>
+                  <p className="rp">${fl.price}</p>
+                </div>
+              </HashLink>
+            ))}
         </div>
 
         <div className="suggestions-1440">
-          {randomFlowers && randomFlowers.map((flower) => (
-            <HashLink to={`/product/${flower._id}#container-1440`} key={flower._id}>
-              <div className="random-flower">
-                <img src={flower.image} alt={flower.name} />
-                <h5 className="rh5">{flower.name}</h5>
-                <p className="rp">${flower.price}</p>
-              </div>
-            </HashLink>
-          ))}
+          {randomFlowers &&
+            randomFlowers.map((fl) => (
+              <HashLink to={`/product/${fl._id}#container-1440`} key={fl._id}>
+                <div className="random-flower">
+                  <img src={fl.image} alt={fl.name} />
+                  <h5 className="rh5">{fl.name}</h5>
+                  <p className="rp">${fl.price}</p>
+                </div>
+              </HashLink>
+            ))}
         </div>
       </div>
     </>

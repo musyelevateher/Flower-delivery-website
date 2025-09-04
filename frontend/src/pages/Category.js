@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Category.css";
+import { Link } from "react-router-dom";
 import FreshFlower from "../assets/Fresh-flowers.png";
 
 const Category = () => {
@@ -33,22 +34,33 @@ const Category = () => {
     fetchFlowers();
   }, [categoryType]);
 
-  return (
-   <div className="category-container">
-     <h2 className="category-heading">
-     <img src={FreshFlower} alt="Category" className="category-icon" />
-     </h2>
+  if (loading) return <p>Loading flowers...</p>;
+  if (error) return <p>Error: {error}</p>;
 
-  <div className="flower-grid">
-    {flowers.map(f => (
-      <div key={f._id} className="flower-card">
-        <img src={f.image} alt={f.name} className="flower-image" />
-        <h3 className="flower-name">{f.name}</h3>
-        <p className="flower-price">${f.price}</p>
+  return (
+    <div className="category-container">
+      <div className="category-sidebar">
+        <h2 className="category-heading">
+          <img src={FreshFlower} alt="Category" className="category-icon" />
+        </h2>
       </div>
-    ))}
-  </div>
-</div>
+
+      <div className="flower-grid">
+        {flowers.map((flower) => (
+          <Link to={`/product/${flower._id}`} key={flower._id} className="flower-link">
+            <div className="flower-card">
+              <img
+                src={flower.image}
+                alt={flower.name}
+                className="flower-image"
+              />
+              <h3 className="flower-name">{flower.name}</h3>
+              <p className="flower-price">${flower.price}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };
 

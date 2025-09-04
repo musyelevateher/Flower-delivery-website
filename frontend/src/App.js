@@ -12,6 +12,7 @@ import Category from "./pages/Category";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
 
+
 import "./App.css";
 
 const App = () => {
