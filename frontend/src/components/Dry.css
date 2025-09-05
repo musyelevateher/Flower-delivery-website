@@ -72,7 +72,7 @@ padding-left: 30px;
 .dry-details,
   .dry-image {
     flex: 1;
-    max-width: 40%;
+    
   }
 
   .dry-image img {
@@ -81,7 +81,7 @@ padding-left: 30px;
     
   }
   .dry-image {
-    flex: 1.6;   /* 60% */
+    flex: 1;   /* 60% */
     max-width: 60%;
   }
   

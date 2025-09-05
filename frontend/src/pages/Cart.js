@@ -45,41 +45,32 @@ const Cart = () => {
     <span className="item-price">${item.price}</span>
   </div>
 </div>
-
-
-
-            <hr />
-          </div>
-        ))}
-      </div>
-
-      {/* Summary Section */}
-      <div className="cart-summary">
+<hr />
+</div>
+))}
+</div>
+     <div className="cart-summary">
         <div className="summary-row">
           <span>Subtotal</span>
           <span>${subtotal.toFixed(2)}</span>
-        </div>
-
-        <div className="summary-row">
+      </div>
+      <div className="summary-row">
           <span>Shipping</span>
           <span>Calculated at next step</span>
-        </div>
-
-        <hr />
-
-        <div className="summary-row total-row">
+      </div>
+      <hr   className="summary-divider"/>
+      <div className="summary-row total-row">
           <span>Total</span>
           <span>${subtotal.toFixed(2)}</span>
-        </div>
-
-        {/* Secure Checkout inline with lock icon */}
-        <div className="secure-checkout">
+      </div>
+      <button className="payment-btn">Continue to Payment</button>
+      <div className="secure-checkout">
           <span>Secure Checkout</span>
           <img src={Export} alt="Lock Icon" className="lock" />
-        </div>
-
-        <hr />
       </div>
+      
+      </div>
+      <hr className="footer-divider" />
     </div>
   );
 };

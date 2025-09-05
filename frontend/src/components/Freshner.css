@@ -53,20 +53,14 @@ border-right: 2px solid black; /* Adjust as needed */
   .freshner-details,
   .freshner-image {
     flex: 1;
-    max-width: 50%;
   }
 
   .freshner-image img {
     width: 100%;
     height: auto;
   }
-  .shop-row {
-    margin-top: 200px;
-    margin-left: 150px;
-  }
+  
   .freshner-details h2 {
-    font-size: 2rem;
-    margin-left: 50px;
-
-  }
+  font-size: 2rem;
+  margin-left: 50px;  }
 }
