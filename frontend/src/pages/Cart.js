@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Cart.css";
 import Export from "../assets/Export-lock.svg";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -17,20 +20,16 @@ const Cart = () => {
     setSubtotal(total);
   }, []);
 
-  const removeItem = (id) => {
-    const updatedCart = cartItems.filter((item) => item.flowerId !== id);
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-    const total = updatedCart.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0
-    );
-    setSubtotal(total);
+const handleCheckout = () => {
+    navigate("/checkout", { state: { totalPrice: subtotal * 100 } }); 
+    // 👆 send subtotal in cents
   };
 
   if (cartItems.length === 0)
     return <div className="empty-cart">Your cart is empty.</div>;
+
+  
 
   return (
     <div className="cart-container">
@@ -63,7 +62,9 @@ const Cart = () => {
           <span>Total</span>
           <span>${subtotal.toFixed(2)}</span>
       </div>
-      <button className="payment-btn">Continue to Payment</button>
+      <button className="payment-btn" onClick={handleCheckout}>
+  Continue to Payment
+</button>
       <div className="secure-checkout">
           <span>Secure Checkout</span>
           <img src={Export} alt="Lock Icon" className="lock" />

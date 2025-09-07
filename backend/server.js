@@ -11,6 +11,8 @@ const Stripe = require("stripe");
 
 dotenv.config();
 
+
+
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY); // put your Secret Key in .env
 
@@ -40,6 +42,8 @@ mongoose.connect(process.env.MONG_URI)
 app.use('/api/auth', require('./routes/authRoutes'));
 const flowerRoutes = require('./routes/flowerRoutes');
 app.use('/api/flowers', flowerRoutes);
+
+
 app.post("/api/create-payment-intent", async (req, res) => {
   try {
     const { totalPrice } = req.body; // frontend sends total in cents (e.g., $50 = 5000)

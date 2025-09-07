@@ -53,22 +53,18 @@ display: block;
 }
 
 
-@media (min-width: 768px) {
-  .live-details,
-  .live-image {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .live-image img {
-    width: 100%;
-    height: auto;
-  }
-  
-  
-  .live-details h2 {
-    font-size: 2rem;
-    margin-left: 50px;
-
-  }
+@media (min-width: 768px) and (max-width: 1023px) {
+.live-details,
+.live-image {
+flex: 1;
+max-width: 50%;
+}
+.live-image img {
+width: 100%;
+height: auto;
+}
+.live-details h2 {
+font-size: 2rem;
+margin-left: 50px;
+}
 }

@@ -1,16 +1,24 @@
-/* Base (mobile default): stacked vertically, 1 per row */
+
 .category-container {
   display: block;
 
 }
 .category-heading {
-
+position: relative; /* needed for absolute positioning of text */
+  display: inline-block; 
   text-align: left;
   border-bottom: 2px solid black;
   padding-bottom: 20px;
 }
+.flower-link {
+  text-decoration: none; 
+  color: inherit;        
+}
+.flower-link:hover {
+  cursor: pointer;
+}
 .category-icon {
-  width: 300px;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto; 
@@ -36,6 +44,17 @@
   border-radius: 8px;
   margin-top: 20px;
 }
+.category-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* text color */
+  font-size: 1.5rem; /* adjust size as needed */
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* makes text readable on the image */
+  pointer-events: none; /* so clicks go through to image if needed */
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .category-heading {
     text-align: center;
@@ -45,9 +64,9 @@
     padding: 0; 
   }
   .category-icon {
-    width: 100%;           /* take full width */
-    height: 250px;         /* fixed banner height */
-    object-fit: cover;     /* fills area, crops edges */
+    width: 100%;           
+    height: 250px;         
+    object-fit: cover;     
     display: block;
   }
 
@@ -87,33 +106,28 @@
 
   .category-heading {
     border-bottom: none;
-    border-right: 2px solid black; /* vertical divider */
+    border-right: 2px solid black;
     text-align: left;
   }
   .flower-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    justify-items: stretch; /* 2 per row */
+    justify-items: stretch; 
 
   }
   .flower-card {
-    width: 100%;
-    box-sizing: border-box;
-
-    border-bottom: 2px solid black; /* horizontal divider */
-    border-right: 2px solid black;  /* vertical divider */
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid black; 
+  border-right: 2px solid black;
   }
-
-  /* Remove right border for cards in 2nd column */
   .flower-card:nth-child(2n) {
     border-right: none;
   }
-    
-  
   .category-sidebar {
     display: flex;
     flex-direction: column;
-    border-right: 2px solid black; /* full-height divider */
+    border-right: 2px solid black; 
   }
 
 }

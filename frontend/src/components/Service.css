@@ -1,72 +1,63 @@
-
-  .service-image h1 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    font-family: Gilroy;  
-  }
-  .service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .service-details h2 {
-    font-size: 0.8rem;
-    font-weight: 200;
-    font-family: Gilroy;
-    margin-bottom: 20px;
-    justify-content: center;
-    text-align: center;
-  }
-  .service-details h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-family: Gilroy;
-   }
-   .service-details p {
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: Gilroy;
-    margin-bottom: 20px;
-    color: #555;
-  
+.service-image h1 {
+font-size: 1.5rem;
+font-weight: 400;
+font-family: Gilroy;  
+}
+.service-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.service-details h2 {
+font-size: 0.8rem;
+font-weight: 200;
+font-family: Gilroy;
+margin-bottom: 20px;
+justify-content: center;
+text-align: center;
+}
+.service-details h1 {
+font-size: 1.5rem;
+font-weight: 700;
+font-family: Gilroy;
+}
+.service-details p {
+font-size: 1rem;
+font-weight: 400;
+font-family: Gilroy;
+margin-bottom: 20px;
+color: #555;
 }
 .service-button {
   width: 100%;
   padding:12px 12px; 
   background-color: white;
-  font-size: 14px;        /* smaller text = slimmer button */
+  font-size: 14px;      
   border: 1px solid #ccc; 
 }
-@media screen and (min-width: 768px) {
-  .service-image h1 {
-    font-size: 2rem;
-    font-weight: 400;
-    font-family: Gilroy; 
-  
-  justify-content: center;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+.service-image h1 {
+font-size: 2rem;
+font-weight: 400;
+font-family: Gilroy; 
+justify-content: center;
 text-align: center;
-  
-  
-
 }
 .service-details {
   text-align: center;
 }
-
 .service-button {
-  width: 30%;
-  }
-
+width: 30%;
 }
-@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
   .service-container {
     display: flex;
-    flex-direction: column; /* Title on top */
+    flex-direction: column; 
     align-items: center;
     padding: 40px 0;
   }
-
-  .service-title {
+.service-title {
     font-size: 2rem;
     font-weight: 400;
     font-family: Gilroy;
@@ -74,10 +65,9 @@ text-align: center;
     text-align: center;
     width: 100%;
   }
-
-  .service-row {
+.service-row {
     display: flex;
-    flex-direction: row; /* Image left, details right */
+    flex-direction: row; 
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
@@ -85,7 +75,7 @@ text-align: center;
     max-width: none; 
     margin: 0;
     border-bottom: 2px solid black;
-    border-top: 2px solid black;/* keeps layout neat on large screens */
+    border-top: 2px solid black;
   }
 
   .service-image,
@@ -102,22 +92,20 @@ text-align: center;
 
   .service-image img {
     width: 100%;
-    max-width: none; /* prevents image from being too huge */
+    max-width: none;
     height: auto;
     object-fit: cover;
     border-bottom: none;
     
   }
-
-  .service-details {
+.service-details {
     display: flex;
     flex-direction: column;
-    text-align: center; /* keep text aligned left for readability */
+    text-align: center; 
     padding-left: 40px;
     
   }
-
-  .service-details h2 {
+.service-details h2 {
     font-size: 0.8rem;
     font-weight: 200;
     font-family: Gilroy;

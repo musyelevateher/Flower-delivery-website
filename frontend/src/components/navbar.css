@@ -1,17 +1,14 @@
-/* Shared styles */
- /* Remove underline + color from all links in navbar */
+
 .navbar ul li a,
 .dropdown ul li a,
 .dropdown h3 a,
 .dropdown h4 a {
-  text-decoration: none;   /* removes underline */
-  color: inherit;          /* makes it inherit the parent text color */
+  text-decoration: none; 
+  color: inherit;          
 }
-
-/* Optional: custom hover effect */
 .navbar ul li a:hover,
 .dropdown ul li a:hover {
-  color: #ff4081; /* pick any hover color */
+  color: #ff4081; 
 }
 
 .top {
@@ -70,7 +67,7 @@
 .cart-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between divider and icon */
+  gap: 0.5rem; 
   cursor: pointer;
 
 }
@@ -80,8 +77,6 @@
   height: 100%;
   background-color: black;
 }
-
-/* Dropdown menus (mobile only) */
 .dropdown {
   padding: 1rem 1.5rem;
   background-color: #fafafa;
@@ -115,7 +110,7 @@
 
 .desktop-menu {
   display: flex;
-  align-items: stretch; /* make li’s span full navbar height */
+  align-items: stretch;
 }
 
 .desktop-menu li {
@@ -125,21 +120,20 @@
   padding: 0 1rem;
   display: flex;
   align-items: center; 
-  height: 100%;/* keep text vertically centered */
+  height: 100%;
 }
 
 /* Vertical divider */
 .desktop-menu li:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 0;     /* reach navbar top border */
-  bottom: 0;  /* reach navbar bottom border */
+  top: 0;     
+  bottom: 0;
   right: 0;
   width: 2px;
   background: black;
 }
 
-/* Left vs Right spacing */
 .left-menu {
   margin-right: auto;
 }
@@ -147,8 +141,6 @@
 .right-menu {
   margin-left: auto;
 }
-
-/* RESPONSIVE TOGGLE */
 .mobile-only {
   display: flex;
 }
@@ -157,36 +149,28 @@
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
   .mobile-only {
-    display: none; /* hide hamburger & cart icons */
+    display: none;
   }
-
-  .desktop-menu li:not(:last-child)::after {
+.desktop-menu li:not(:last-child)::after {
     height: 43px;
     margin-top: -10px;
   }
   .cart-wrapper {
     display: none;
   }
-
-  
-
   .desktop-only {
-    display: flex; /* show text menus */
+    display: flex; 
     align-items: center;
   }
-
   .dropdown {
-    display: none; /* no dropdowns on desktop */
+    display: none; 
   }
-
-  .hamburger-wrapper::after {
-    height: calc(100% + 4px);
-    top: 0;
-  }
- 
-
+.hamburger-wrapper::after {
+height: calc(100% + 4px);
+top: 0;
+}
 }
 
 

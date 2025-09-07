@@ -250,7 +250,7 @@
 
 
 /* Tablet/Desktop layout */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .contact-headings {
   display: grid;
   grid-template-columns: 1fr 1fr; /* equal space */
@@ -284,15 +284,12 @@ grid-template-columns: 1fr 1fr;
 
 /* Column styling */
  .contact-column {
-  padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    /* centers inner content horizontally */
-        /* ensure it matches full parent height */
-    justify-content: center;
-  height: 92%;
-
-      /* force full height of row */
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 92%;
 }
 .contact-sections {
   display: grid;
@@ -300,9 +297,7 @@ grid-template-columns: 1fr 1fr;
   border: 2px solid black;
   border-left: none;
   border-right: none;
-  
-
-}
+  }
 
 
 /* Phone items stacked */
@@ -353,7 +348,7 @@ grid-template-columns: 1fr 1fr;
   
 
 }
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) and (max-width: 1440px) {
   .follow-container {
     display: none;
   }

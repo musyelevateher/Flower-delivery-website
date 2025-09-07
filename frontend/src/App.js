@@ -7,12 +7,11 @@ import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-
 import Cart from "./pages/Cart";
 import Category from "./pages/Category";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
-
+import Checkout from "./pages/Checkout";
 
 import "./App.css";
 
@@ -30,6 +29,7 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/:categoryType" element={<Category />} />
+        <Route path="/checkout" element={<Checkout />} />.
       </Routes>
       <Footer />
     </BrowserRouter>

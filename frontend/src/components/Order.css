@@ -6,7 +6,7 @@
   border-bottom: 2px solid black;
 }
 .order-image img {
-  width: 120px; /* adjust as needed */
+  width: 120px; 
   height: auto;
 }
 .order-details h2 {
@@ -16,21 +16,21 @@
   color: #555; 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px)and (max-width: 1023px) {
 .order-image img {
-  width: 100%; /* adjust for larger screens */
+  width: 100%;
   height: auto;
 }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
 .order-details h2 {
   margin: 50px 0 0 0;
   font-size: 0.8rem;
-  font-weight: 700;  /* bold */
+  font-weight: 700;  
   color: #555;
   line-height: 1.4;
-  max-width: 250px;  /* reduce width so it breaks into more lines */
-  font-family: Gilroy, sans-serif;
+  max-width: 250px; 
+  font-family: Gilroy;
 }
 
 }

@@ -22,7 +22,7 @@
   width: 100%;
   padding: 12px 12px;
   background-color: white;
-  font-size: 14px; /* smaller text = slimmer button */
+  font-size: 14px; 
   border: 1px solid #ccc;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -38,20 +38,20 @@
   font-weight: 200;
 
 }
-@media and (min-width: 768px){
-  .client-details1 button {
-    width: 30%;
-  }
+@media and (min-width: 768px) and (max-width: 1023px) {
+.client-details1 button {
+  width: 30%;
+}
 }
 
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
    .client-image {
     position: relative;
   }
 
   .client-image img {
-    transform: translateY(-60px); /* visually moves image upward */
+    transform: translateY(-60px); 
   }
   .client-details1 button {
     width: 20%;

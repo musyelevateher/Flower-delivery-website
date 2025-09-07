@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
 }
 
 .signup-box {
@@ -84,14 +83,12 @@
   text-align: center;
 }
 .privacy-terms-section {
-  width: 100vw;                  /* span full viewport width */
+  width: 100vw;                  
   border-bottom: 2px solid black; 
-  text-align: center;            /* center the links */
-  padding-bottom: 20px;          /* space above line */
-  margin-left: calc(-50vw + 50%); /* break out of parent container */
+  text-align: center;          
+  padding-bottom: 20px;          
+  margin-left: calc(-50vw + 50%);
 }
-
-
 .popup-message {
   position: fixed;
   top: 50%;
@@ -130,7 +127,7 @@
   100% { opacity: 0; transform: translate(-50%, -60%); }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .privacy-terms-links {
     flex-direction: row;   
     justify-content: center;

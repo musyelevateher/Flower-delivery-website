@@ -25,20 +25,20 @@
 }
 
 /* Tablet */
-@media screen and (min-width: 768px) {
-  .gift {
-    font-size: 1rem;
-  }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+.gift {
+font-size: 1rem;
+}
 }
 
 /* Desktop */
-@media screen and (min-width: 1024px) {
-  .iv {
-    align-items: flex-start; 
-    text-align: left; 
-  }
+@media screen and (min-width: 1024px)and (max-width: 1440px) {
+.iv {
+align-items: flex-start; 
+text-align: left; 
+}
 
-  .gift {
+.gift {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;

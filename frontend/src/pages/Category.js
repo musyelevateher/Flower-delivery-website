@@ -1,14 +1,28 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./Category.css";
 import { Link } from "react-router-dom";
+import "./Category.css";
 import FreshFlower from "../assets/Fresh-flowers.png";
+
+// Map of normalized category keys to display names
+const categoryNames = {
+  fresh: "Fresh Flowers",
+  liveplants: "Live Plants",
+  aroma: "Aroma",
+  dried: "Dried Flowers",
+  freshners: "Freshners",
+};
 
 const Category = () => {
   const { categoryType } = useParams();
   const [flowers, setFlowers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Normalize categoryType: lowercase & remove dashes/spaces
+  const categoryTypeNormalized = categoryType
+    ? categoryType.toLowerCase().replace(/[-\s]/g, "")
+    : "";
 
   useEffect(() => {
     const fetchFlowers = async () => {
@@ -41,13 +55,24 @@ const Category = () => {
     <div className="category-container">
       <div className="category-sidebar">
         <h2 className="category-heading">
-          <img src={FreshFlower} alt="Category" className="category-icon" />
+          <img
+            src={FreshFlower}
+            alt={categoryNames[categoryTypeNormalized] || "Category"}
+            className="category-icon"
+          />
+          <span className="category-name">
+            {categoryNames[categoryTypeNormalized] || "Category"}
+          </span>
         </h2>
       </div>
 
       <div className="flower-grid">
         {flowers.map((flower) => (
-          <Link to={`/product/${flower._id}`} key={flower._id} className="flower-link">
+          <Link
+            to={`/product/${flower._id}`}
+            key={flower._id}
+            className="flower-link"
+          >
             <div className="flower-card">
               <img
                 src={flower.image}

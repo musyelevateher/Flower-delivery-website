@@ -59,26 +59,23 @@ padding-left: 30px;
 }
 .dry-image img {
   width: 100%;
-  height: 100%;       /* stretch image to touch border bottom */
-  object-fit: cover;  /* keep aspect ratio */
+  height: 100%;       
+  object-fit: cover;  
   display: block;
-  border-right: 2px solid black; /* optional vertical divider */
+  border-right: 2px solid black; 
 }
 .dry-image {
   flex: 1;
-  display: flex; /* make image fill column */
+  display: flex;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 .dry-details,
-  .dry-image {
-    flex: 1;
-    
-  }
-
-  .dry-image img {
+.dry-image {
+  flex: 1;
+}
+ .dry-image img {
     width: 100%;
     height: 100%;
-    
   }
   .dry-image {
     flex: 1;   /* 60% */
@@ -92,7 +89,7 @@ padding-left: 30px;
 
   }
 } 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
     .dry-details h2 {
       margin-top: 0;
       margin-left: 0;

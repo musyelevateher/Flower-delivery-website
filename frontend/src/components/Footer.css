@@ -75,7 +75,7 @@ color: #555;
   color: #555;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .footer-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -94,7 +94,7 @@ color: #555;
     border-right: 2px solid black;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
 .footer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
