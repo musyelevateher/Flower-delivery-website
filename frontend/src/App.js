@@ -12,7 +12,7 @@ import Category from "./pages/Category";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
-import ProtectedRoute from "./pages/ProtectedRoute";
+
 import "./App.css";
 
 const App = () => {
@@ -28,10 +28,9 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/:categoryType" element={<Category />} />
-        <Route element={<ProtectedRoute />}>
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        </Route>
+        
       </Routes>
       <Footer />
     </BrowserRouter>
