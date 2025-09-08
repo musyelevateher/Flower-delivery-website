@@ -37,7 +37,7 @@ const Signin = () => {
             localStorage.removeItem("redirectAfterLogin");
             navigate(redirectPath);
           } else {
-            navigate("/home");
+            navigate("/");
           }
         }, 3000);
       } else {
