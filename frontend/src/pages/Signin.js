@@ -10,6 +10,13 @@ const Signin = () => {
   const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    // 🚫 Prevent signed-in users from seeing this page
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const showPopup = (message, type) => {
     setPopup({ show: true, message, type });

@@ -12,6 +12,8 @@ import Category from "./pages/Category";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
+import ProtectedRoute from "./pages/ProtectedRoute";
+
 
 import "./App.css";
 
@@ -25,11 +27,13 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/:categoryType" element={<Category />} />
-        <Route path="/checkout" element={<Checkout />} />.
+        <Route element={<ProtectedRoute />}>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

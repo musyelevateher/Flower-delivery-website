@@ -14,6 +14,13 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // 🚫 Prevent signed-in users from seeing this page
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   const showPopup = (message, type) => {
     setPopup({ show: true, message, type });
     setTimeout(() => {
