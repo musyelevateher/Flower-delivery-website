@@ -19,6 +19,10 @@ const Cart = () => {
     );
     setSubtotal(total);
   }, []);
+  const removeFromCart = (flowerId) => {
+    const updatedCart = cartItems.filter((item) => item.flowerId !== flowerId);
+    setCartItems(updatedCart);
+  };
 
 
 const handleCheckout = () => {
@@ -43,6 +47,12 @@ const handleCheckout = () => {
     <span className="item-quantity">Quantity ({item.quantity})</span>
     <span className="item-price">${item.price}</span>
   </div>
+  <button
+                className="remove-btn"
+                onClick={() => removeFromCart(item.flowerId)}
+              >
+                Remove
+              </button>
 </div>
 <hr />
 </div>

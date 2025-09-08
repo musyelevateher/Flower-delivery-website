@@ -78,7 +78,7 @@ position: relative; /* needed for absolute positioning of text */
   .flower-card {
     align-items: center;
     text-align: center;
-  margin-top: -20px;
+  margin-top: -30px;
     border-right: 2px solid black; 
     border-bottom: 2px solid black; 
     
