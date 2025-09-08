@@ -1,5 +1,5 @@
 import "./Signin.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import GoogleLogo from "../assets/Google-icon.svg";
 import AppleLogo from "../assets/Apple.svg";
 import { useNavigate, Link } from "react-router-dom";
@@ -10,7 +10,7 @@ const Signin = () => {
   const [popup, setPopup] = useState({ show: false, message: "", type: "" });
 
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     // 🚫 Prevent signed-in users from seeing this page
     if (localStorage.getItem("token")) {
