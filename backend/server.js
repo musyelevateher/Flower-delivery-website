@@ -22,7 +22,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://flower-delivery-website-admin-frontend.onrender.com" // if you also have a customer-facing frontend
+      "https://flower-delivery-website-admin-frontend.onrender.com",
+      "https://flower-delivery-website-frontend-2rrg.onrender.com"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
