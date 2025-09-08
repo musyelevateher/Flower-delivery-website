@@ -13,8 +13,6 @@ import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
 import ProtectedRoute from "./pages/ProtectedRoute";
-
-
 import "./App.css";
 
 const App = () => {
