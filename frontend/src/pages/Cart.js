@@ -6,13 +6,12 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // 👈 track login state
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // set true if token exists
+  // 🔑 derive login state directly from localStorage (no stale state)
+  const isLoggedIn = !!localStorage.getItem("token");
 
+  useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
 
@@ -76,16 +75,13 @@ const Cart = () => {
           <span>${subtotal.toFixed(2)}</span>
         </div>
 
-        {/* 👇 Show different buttons based on login state */}
+        {/* 👇 Hide / Show based on login */}
         {isLoggedIn ? (
           <button className="payment-btn" onClick={handleCheckout}>
             Continue to Payment
           </button>
         ) : (
-          <button
-            className="payment-btn"
-            onClick={() => navigate("/signin")}
-          >
+          <button className="payment-btn" onClick={() => navigate("/signin")}>
             Sign in to Checkout
           </button>
         )}
