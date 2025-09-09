@@ -105,6 +105,64 @@
     border-bottom: none;
   }
 }
+@media screen and (min-width: 1440px) {
+  .about-container {
+  width: 100%;
+  padding: 0 2rem; /* spacing on the sides */
+  box-sizing: border-box;
+}
+
+.about-content {
+  text-align: center;
+  margin-bottom: 1rem; /* space below "About us" */
+}
+
+.about-divider {
+  width: 2px;                /* fixed size OR use % like 50% */
+  border-bottom: 2px solid black;
+  margin: 0 auto 0 auto; 
+  top: 2px;   /* centers it + adds space below */
+}
+
+.about-description {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;          /* keeps text centered */
+  margin: 0 auto;
+}
+
+.about-description h3 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.about-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 1rem auto;
+  max-width: 900px;   /* keeps paragraph readable */
+}
+
+.about-btn {
+  display: inline-block;
+   margin: 2rem auto 3rem; 
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+  
+}
 
 
 

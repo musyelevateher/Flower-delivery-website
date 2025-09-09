@@ -184,5 +184,8 @@ border-bottom: none;
 }
   }
   
-  
-
+  @media screen and (min-width: 1440px) {
+    .choose-vertical-divider {
+      margin-left: 105px;
+  }
+  }

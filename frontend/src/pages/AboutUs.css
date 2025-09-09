@@ -46,7 +46,6 @@
   font-family: Gilroy;
   font-style: medium;
   text-align: center;
-  
 }
 .market {
  display: block;           /* makes it take full line so margin works */
@@ -82,12 +81,9 @@
   gap: 2rem;
   width: 100%;
   margin-top: 0;
-  
 }
-
 .story {
   flex: 1;                 /* both get equal width */
-
 }
 
 .images-row img {
@@ -110,7 +106,6 @@
   margin: 3rem 0;
   flex-wrap: wrap;   
 }
-
 .hero-img {
   flex: 1;
   text-align: center;
@@ -163,5 +158,3 @@
 }
 
 
-
-  
