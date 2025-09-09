@@ -107,7 +107,7 @@ const Signin = () => {
         <div className="privacy-terms-links">
           <a href="/privacy">Privacy Policy</a>
           <br />
-          <div className="divider">|</div>
+          <div className="divider"></div>
           <a href="/terms">Terms and Conditions</a>
         </div>
       </div>

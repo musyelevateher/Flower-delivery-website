@@ -167,7 +167,7 @@ margin: 0;
 font-size: 1rem;        
 }
 .privacy-terms-links {
-    font-size: 0.9rem;
+font-size: 0.9rem;
 }
 .signin-form {
 display: flex;  
@@ -210,8 +210,11 @@ margin-top: 1rem;
 
 }
 .divider {
-  width: 2px;
-  background-color: black;
+width: 2px;
+background-color: black;
+display: inline-block;
+height: 20px;         
+margin: 0 16px;
 }
 a {
   text-decoration: none;
@@ -223,14 +226,8 @@ justify-content: center;
 align-items: center;
 gap: 0; 
 }
-.divider {
-display: inline-block;
-width: 1px;         
-height: 20px;         
-background-color: red;
-margin: 0 16px;
-}
-@media (min-width: 1024px) and (width: 1440px) {
+
+@media (min-width: 1024px) and (max-width: 1440px) {
 .signin-box { max-width: 500px; }
 .signin-title { font-size: 25px; }
   .signin-container {
@@ -253,10 +250,11 @@ margin: 0 16px;
 }
 
 .privacy-terms-links .divider {
-  width: 3px;          
-  height: 50px;        
-  color: black;
-  margin: 0 10px;     
-}
+    width: 1px;
+    background-color: black;
+    display: inline-block;
+    height: 20px; /* make consistent with tablet view */
+    margin: 0 10px;
+  }
 
 }
