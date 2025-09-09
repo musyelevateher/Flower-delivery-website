@@ -194,8 +194,8 @@ npm start
 
 Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
 
-![Screenshot 1] ![alt text](<Screenshot (86).png>)
-![Screenshot 2] ![alt text](<Screenshot (87).png>)
+![Screenshot 1] ![alt text](<Screenshot (112)-1.png>)
+![Screenshot 2] ![alt text](<Screenshot (113).png>)
 
 
 ## License
