@@ -48,21 +48,21 @@
   text-align: center;
 }
 .market {
- display: block;           /* makes it take full line so margin works */
-  margin: 2rem auto;        /* centers horizontally */
-  padding: 1rem 2.5rem;     /* bigger button */
-  font-size: 1.2rem;        /* larger text */
-  background-color: #222;   /* example background */
-  color: white;             /* text color */
+ display: block;           
+  margin: 2rem auto;        
+  padding: 1rem 2.5rem;     
+  font-size: 1.2rem;        
+  background-color: #222;   
+  color: white;             
   border: none;
-  border-radius: 2px;       /* rounded corners */
+  border-radius: 2px;      
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease;
   width: 80%;
   
 }
 .market:hover {
-  background-color: #444;   /* darker on hover */
+  background-color: #444;   
   transform: scale(1.05);
 }
 .simple {
@@ -77,13 +77,13 @@
   .images-row {
   display: flex;
   justify-content: center;
-  align-items: center;   /* vertically align */
+  align-items: center;   
   gap: 2rem;
   width: 100%;
   margin-top: 0;
 }
 .story {
-  flex: 1;                 /* both get equal width */
+  flex: 1;               
 }
 
 .images-row img {
@@ -121,9 +121,9 @@
   justify-content: center;
   gap: 2rem;
   margin: 3rem 0;
-  flex-wrap: wrap;   /* stacks on smaller screens */
-  padding-bottom: 2rem; /* space above border */
-  border-bottom: 2px solid ; /* light gray bottom border */
+  flex-wrap: wrap;   
+  padding-bottom: 2rem; 
+  border-bottom: 2px solid ; 
 }
 .hero-img img {
   width: 100%;

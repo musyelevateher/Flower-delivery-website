@@ -4,7 +4,7 @@
 
 }
 .category-heading {
-position: relative; /* needed for absolute positioning of text */
+position: relative; 
   display: inline-block; 
   text-align: left;
   border-bottom: 2px solid black;
@@ -49,11 +49,11 @@ position: relative; /* needed for absolute positioning of text */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* text color */
-  font-size: 1.5rem; /* adjust size as needed */
+  color: white; 
+  font-size: 1.5rem; 
   font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* makes text readable on the image */
-  pointer-events: none; /* so clicks go through to image if needed */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none; 
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .category-heading {
@@ -94,7 +94,6 @@ position: relative; /* needed for absolute positioning of text */
 }
 
 
-/* Desktop: you can choose 2 or 3 per row */
 @media (min-width: 1024px) and (max-width: 1440px) {
   .category-container {
     display: grid;

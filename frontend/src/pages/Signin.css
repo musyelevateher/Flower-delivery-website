@@ -8,13 +8,11 @@
   position: relative;
   overflow-x: hidden;
 }
-
 .signin-box {
   width: 100%;
   max-width: 400px;
   /* padding: 2rem; */
   background: #fff;
-   
 }
 
 .signin-title {
@@ -246,19 +244,19 @@ margin: 0 16px;
 }
 .privacy-terms-links {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; 
   align-items: center;
-  gap: 10px; /* space between links and divider */
-  flex-wrap: wrap; /* stack on smaller screens */
+  gap: 10px; 
+  flex-wrap: wrap; 
   font-size: 0.9rem;
-  color: #555; /* optional */
+  color: #555; 
 }
 
 .privacy-terms-links .divider {
-  width: 3px;          /* vertical line */
-  height: 50px;        /* adjust as needed */
+  width: 3px;          
+  height: 50px;        
   color: black;
-  margin: 0 10px;      /* spacing around divider */
+  margin: 0 10px;     
 }
 
 }

@@ -253,7 +253,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .contact-headings {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* equal space */
+  grid-template-columns: 1fr 1fr; 
   text-align: center;
   border-bottom: 2px solid black;
   font-size: 1.3rem;
@@ -270,7 +270,7 @@
 }
 .contact-headings > *:first-child,
 .contact-content > *:first-child {
-  border-right: 2px solid black; /* this draws the continuous line */
+  border-right: 2px solid black; 
 }
 
 /* Content grid */
@@ -279,10 +279,8 @@
 grid-template-columns: 1fr 1fr;
   text-align: center;
   align-items: stretch;
-        /* aligns items under headings */
+        
 }
-
-/* Column styling */
  .contact-column {
 padding: 20px;
 display: flex;
@@ -305,7 +303,7 @@ height: 92%;
   display: flex;
   align-items: center;
   gap: 8px;
-  justify-content: center; /* keep centered */
+  justify-content: center;
   margin-bottom: 8px;
 }
 
@@ -313,8 +311,6 @@ height: 92%;
   width: 20px;
   height: 20px;
 }
-
-/* Address items stacked */
 .address-item {
   display: flex;
   align-items: center;
@@ -332,21 +328,14 @@ height: 92%;
     width: 100%; 
     margin-bottom: 0;
   }
-
-  /* Put them in one row */
-  
-   .button-group {
+  .button-group {
     flex-direction: row;
-    
   }
-
-  .button-group .number,
-  .button-group .book {
+.button-group .number,
+.button-group .book {
     width: 100%;
   }
   
-  
-
 }
 @media screen and (min-width:1024px) and (max-width: 1440px) {
   .follow-container {
