@@ -188,6 +188,7 @@ npm start
 ## Deployment
 
 - A live video using loom: [Loom Video](https://www.loom.com/share/629ccc080da14055b5fb4c4ab9d85c41?sid=44c5115a-e1ff-48f9-84cc-83028f86d5c9)
+
 - Ensured `.env` and `node_modules` are in `.gitignore` before pushing to GitHub.
 
 ## Screenshots
