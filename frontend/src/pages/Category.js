@@ -2,16 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Category.css";
-import FreshFlower from "../assets/Fresh-flowers.png";
-
-// Map of normalized category keys to display names
-const categoryNames = {
-  fresh: "Fresh Flowers",
-  liveplants: "Live Plants",
-  aroma: "Aroma",
-  dried: "Dried Flowers",
-  freshners: "Freshners",
-};
+import FreshFlower from "../assets/Fresh-flowers.png"; // default icon
 
 const Category = () => {
   const { categoryType } = useParams();
@@ -19,10 +10,28 @@ const Category = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Normalize categoryType: lowercase & remove dashes/spaces
-  const categoryTypeNormalized = categoryType
-    ? categoryType.toLowerCase().replace(/[-\s]/g, "")
-    : "";
+  // 🔹 Fix names for special cases first
+  const categoryNameOverrides = {
+    live: "Live Plants",
+    "live-plants": "Live Plants",
+    freshner: "Freshners",
+    freshners: "Freshners",
+    fresh: "Fresh Flowers",
+    aroma: "Aroma",
+    dried: "Dried Flowers",
+  };
+
+  // 🔹 Prettify function (fallback for normal cases)
+  const prettifyCategoryName = (str) => {
+    if (!str) return "Category";
+    return str
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  // 🔹 Choose name from overrides or prettify
+  const displayName =
+    categoryNameOverrides[categoryType] || prettifyCategoryName(categoryType);
 
   useEffect(() => {
     const fetchFlowers = async () => {
@@ -56,13 +65,11 @@ const Category = () => {
       <div className="category-sidebar">
         <h2 className="category-heading">
           <img
-            src={FreshFlower}
-            alt={categoryNames[categoryTypeNormalized] || "Category"}
+            src={FreshFlower} // currently same image for all categories
+            alt={displayName}
             className="category-icon"
           />
-          <span className="category-name">
-            {categoryNames[categoryTypeNormalized] || "Category"}
-          </span>
+          <span className="category-name">{displayName}</span>
         </h2>
       </div>
 
