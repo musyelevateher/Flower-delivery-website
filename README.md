@@ -114,13 +114,9 @@ Authentication uses:
 
 ## Environment Variables
 
-Create a `.env` file in the backend root:
+Create a `.env` file in the backend root and frontend root to store sensitive information like JWT, MONGO URI,API keys etc.
 
-```
-PORT_NUMBER=4000
-MONG_URI=mongodb+srv://musyelevateher:Abda0101@cluster0.fk0cdv6.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=mysupersecretjwtkey123
-```
+
 ## Installation
 
 1. Clone the repository:
@@ -153,7 +149,11 @@ Start the admin frontend (in a separate terminal):
 cd ../admin
 npm start
 ```
-
+Start the frontend (in a separate terminal):
+```sh
+cd ../frontend
+npm start
+```
 
 ### Auth
 
