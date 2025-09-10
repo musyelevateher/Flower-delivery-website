@@ -1,0 +1,94 @@
+/* Container for the whole checkout page */
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 80vh;
+  background-color: #fef8f8;
+  border-bottom: 2px solid black;
+}
+
+/* Checkout form styling */
+.checkout-form {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Checkout title */
+.checkout-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+/* CardElement container */
+.card-element-wrapper {
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Stripe input fields inside CardElement */
+.StripeElement {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Pay button styling */
+.checkout-button {
+  padding: 14px 0;
+  background: linear-gradient(90deg, #ff7eb3 0%, #ff758c 100%);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 118, 140, 0.4);
+}
+
+.checkout-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Message text */
+.checkout-message {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #e53e3e; /* red for error */
+}
+
+/* Responsive design */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .checkout-form {
+    padding: 30px 20px;
+  }
+
+  .checkout-title {
+    font-size: 20px;
+  }
+
+  .checkout-button {
+    font-size: 16px;
+  }
+}

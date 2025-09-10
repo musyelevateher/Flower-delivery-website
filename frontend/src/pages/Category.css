@@ -1,0 +1,132 @@
+
+.category-container {
+  display: block;
+
+}
+.category-heading {
+position: relative; 
+  display: inline-block; 
+  text-align: left;
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
+}
+.flower-link {
+  text-decoration: none; 
+  color: inherit;        
+}
+.flower-link:hover {
+  cursor: pointer;
+}
+.category-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; 
+}
+.flower-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.flower-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.flower-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.category-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 1.5rem; 
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none; 
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .category-heading {
+    text-align: center;
+    
+    border-bottom: 2px solid black;
+    width: 100%;
+    padding: 0; 
+  }
+  .category-icon {
+    width: 100%;           
+    height: 250px;         
+    object-fit: cover;     
+    display: block;
+  }
+
+  .flower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  .flower-card {
+    align-items: center;
+    text-align: center;
+  margin-top: -30px;
+    border-right: 2px solid black; 
+    border-bottom: 2px solid black; 
+    
+
+  }
+    .flower-card:nth-child(2n) {
+    border-right: none;
+  }
+  .flower-card:nth-last-child(-n + 2) {
+    border-bottom: 2px solid black;
+    
+}  
+}
+
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .category-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+    align-items: stretch;
+    
+    border-bottom: 2px solid black;
+  }
+
+  .category-heading {
+    border-bottom: none;
+    border-right: 2px solid black;
+    text-align: left;
+  }
+  .flower-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: stretch; 
+
+  }
+  .flower-card {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid black; 
+  border-right: 2px solid black;
+  }
+  .flower-card:nth-child(2n) {
+    border-right: none;
+  }
+  .category-sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid black; 
+  }
+
+}

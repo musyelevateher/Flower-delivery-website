@@ -1,14 +1,15 @@
 # Flower Delivery Website 
 
-This project includes both the backend API and an admin frontend for a Flower Delivery Website.
-
-- The **backend API** is built with Node.js, Express, MongoDB Atlas, and Multer for image uploads.
-- The **admin frontend** is a React-based dashboard for administrators to manage flowers (list, add, and delete flowers with image upload).
+This project includes:
+- The **backend API** (Node.js, Express, MongoDB Atlas, Multer for image uploads)
+- The **admin frontend** (React dashboard for administrators to manage flowers)
+- The **customer frontend** (React app for customers to browse, order, and pay for flowers online)
 
 ## Demo Links
 
 [![Backend API](https://img.shields.io/badge/Backend-Live-green)](https://flower-delivery-website-backend-v9d6.onrender.com)  
 [![Admin Frontend](https://img.shields.io/badge/Admin-Live-blue)](https://flower-delivery-website-admin-frontend.onrender.com)
+[![Frontend](https://img.shields.io/badge/Frontend-Live-red)](https://flower-delivery-website-frontend-2rrg.onrender.com)
 
 ## Features
 
@@ -17,6 +18,8 @@ This project includes both the backend API and an admin frontend for a Flower De
 - Image upload support for flower pictures (using Multer)
 - MongoDB Atlas integration for cloud database
 - CORS enabled for frontend-backend communication
+- **Customer frontend:** Browse flowers, add to cart, checkout and pay using Stripe
+- **Stripe integration:** Secure online payments; after successful payment, customers are redirected to the home page
 
 ## Folder Structure
 
@@ -53,8 +56,34 @@ Flower-delivery-website/
 │   ├── package.json
 │   └── frontend
 │
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Order.js
+│   │   │   ├── Fresh.js
+│   │   │   └── (other customer components)
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Checkout.js
+│   │   │   ├── Payment.js
+│   │   │   └── (other customer pages)
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── (other React app files)
+│
 ├── README.md
 ```
+
+## Frontend Folder
+
+The `frontend/` folder contains the customer-facing React app.  
+Features include:
+- Browsing flowers and viewing details
+- Adding flowers to cart
+- Checkout and payment using Stripe
+- After successful payment, customers are redirected to the home page
 
 ## Admin Folder
 
@@ -63,9 +92,10 @@ It allows administrators to manage flowers in the system, including:
 - Listing all flowers
 - Adding new flowers (with image upload)
 - Deleting flowers (with instant UI feedback)
-
+- (You can add more features like editing as needed)
 
 This dashboard provides an easy-to-use interface for managing the flower catalog and interacts with the backend API.
+
 
 ## User Model
 
@@ -84,13 +114,9 @@ Authentication uses:
 
 ## Environment Variables
 
-Create a `.env` file in the backend root:
+Create a `.env` file in the backend root and frontend root to store sensitive information like JWT, MONGO URI,API keys etc.
 
-```
-PORT_NUMBER=4000
-MONG_URI=mongodb+srv://musyelevateher:Abda0101@cluster0.fk0cdv6.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=mysupersecretjwtkey123
-```
+
 ## Installation
 
 1. Clone the repository:
@@ -123,7 +149,11 @@ Start the admin frontend (in a separate terminal):
 cd ../admin
 npm start
 ```
-
+Start the frontend (in a separate terminal):
+```sh
+cd ../frontend
+npm start
+```
 
 ### Auth
 
@@ -157,15 +187,16 @@ npm start
 
 ## Deployment
 
-- A live video using loom: [Loom Video](https://www.loom.com/share/629ccc080da14055b5fb4c4ab9d85c41?sid=44c5115a-e1ff-48f9-84cc-83028f86d5c9)
+- A live video using loom: [Loom Video](https://www.loom.com/share/14ea0c241bb74e79918cfc579338e130?sid=5bf2f04e-c5cd-45da-ad8c-7a3884a9595c)
+
 - Ensured `.env` and `node_modules` are in `.gitignore` before pushing to GitHub.
 
 ## Screenshots
 
 Include screenshots or GIFs of your project in action. This helps users understand what your project looks like and how it functions.
 
-![Screenshot 1] ![alt text](<Screenshot (86).png>)
-![Screenshot 2] ![alt text](<Screenshot (87).png>)
+![Screenshot 1] ![alt text](<Screenshot (112)-1.png>)
+![Screenshot 2] ![alt text](<Screenshot (113).png>)
 
 
 ## License

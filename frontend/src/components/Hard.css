@@ -1,0 +1,182 @@
+ .huwaida img { 
+  object-fit: cover; 
+  width: 100%; 
+  height: 100%;
+} 
+.flexation {
+  display: none;
+}
+.huwaida img {
+  width: 100%;
+  height: 100%;   
+  object-fit: cover;
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+.flexation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  font-family: Gilroy;
+  align-items: stretch;
+  border-bottom: 2px solid black;
+  
+}
+.To-label { 
+  width: 100%;  
+  height: 100%; 
+ } 
+ .forget  { 
+height: 100%;
+  border-right: 2px solid black;
+ } 
+ .huwaida img { 
+  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  display: block;
+  
+} 
+.musy {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;   
+  justify-content: center;
+}
+.hany {
+  width: 2px;            
+  background-color: black;
+  margin-top: -5px;
+  margin-left: 50px; 
+}
+ .abba h1 { 
+  font-size: 1.5rem; 
+  font-weight: 400; 
+  font-family: Gilroy;
+ } 
+ .abba h5 { 
+  font-size: 1rem; 
+  font-weight: 300; 
+  font-family: 
+  Gilroy; color: #555; 
+} 
+.nu { 
+  border: 2px solid black; 
+  width: 50%; 
+  background-color: white; 
+} 
+.bo { 
+  width: 50%; 
+  background-color: #121212; 
+  color: white; 
+} 
+.conts { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid;
+  margin-top: 30px;
+  font-size: 1.3rem; 
+} 
+.conts h2 { 
+  font-size: 1.3rem; 
+  font-weight: 600; 
+  margin: 0; 
+  padding: 15px 0; 
+  height: 100%; 
+} 
+.ent { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  align-items: stretch; 
+} 
+.con::after {
+  content: "";
+position: absolute;
+  top: 30px;  
+  bottom: 0;    
+  left: 50%;    
+  border-left: 2px solid black;
+  height: 320px;
+  
+}
+
+.cumn { 
+  padding: 20px 20px;
+  display: flex; 
+  flex-direction: column; 
+  
+} 
+.tem { 
+  display: flex; 
+  margin-bottom: 8px; 
+} 
+.tem h1 { 
+  font-size: 12px; 
+} 
+.nu, .bo { 
+  width: 100%; 
+  margin-bottom: 0; 
+  padding: 10px 15px;
+} 
+.add { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  justify-content: center; 
+} 
+.add img { 
+  width: 20px; 
+  height: 20px; 
+} 
+.group { 
+  display: flex; 
+  flex-direction: row; 
+  padding-bottom: 30px;
+  
+} 
+.group .nu, .group .bo { 
+  width: 100%;
+  
+ }
+ .amatu {
+  margin-top: 30px;
+  margin-left:20px;
+ }
+
+.con {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;           
+  
+}
+.ati {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-style: medium;
+}
+.huwaida {
+  width: 100%;
+  height: 100%;
+  
+}
+}
+@media screen and (min-width: 1440px) {
+  .con::after {
+    height: 507px;
+  }
+
+
+  .huwaida {
+    height: 100%;
+    width: 100%;
+  }
+
+  .huwaida img {
+    width: 100%;
+    height: 100%;        
+    object-fit: cover;
+    display: block;
+  }
+}

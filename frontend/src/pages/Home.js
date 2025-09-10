@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+
+
 import Herosection from "../components/Herosection";
 import Order from "../components/Order";
 import Fresh from "../components/Fresh";
@@ -13,6 +14,8 @@ import Follow from "../components/Follow";
 import Service from "../components/Service";
 import Client from "../components/Client";
 import Footer from "../components/Footer";
+import HeroOrder from "../components/HeroOrder";
+import Hard from "../components/Hard";
 
 
 
@@ -21,17 +24,20 @@ import Footer from "../components/Footer";
 const Home = () => {
 return ( 
   <div>
-    <Navbar />
-    <Herosection />
+  
+
+    {/* <Herosection />
     <Order />
     <Fresh />
     <Dry />
     <Live />
     <Aroma />
-    <Freshner />
+    <Freshner /> */}
+    <HeroOrder />
     <About />
     <Choose />
     <Follow />
+    <Hard />
     <Service />
     <Client />
     <Footer />

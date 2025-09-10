@@ -1,17 +1,31 @@
 .freshner-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  border-bottom: 2px solid black;/* Helps with responsiveness */
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+.freshner-details,
+.freshner-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.freshner-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .freshner-details h2 {
-font-style: Regular italic;
+font-style: Regular;
 font-family: Gilroy;
 }
 .shop-row {
 display: flex;
 align-items: center;
 gap: 10px;
+margin: 0;
 }
 .shop-row h3 {
 font-size: 0.7rem;
@@ -22,26 +36,29 @@ height: auto;
 }
 .freshner-image img {
 width: 100%;
-display: block; /* Adjust as needed */
+height: 100%;
+object-fit: cover;
+display: block;
+border-right: 2px solid black;
 }
-@media (min-width: 768px) {
+.freshner-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.freshner-link:hover {
+  opacity:0.8;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
   .freshner-details,
   .freshner-image {
     flex: 1;
-    max-width: 50%;
   }
-
-  .freshner-image img {
-    width: 100%;
-    height: auto;
-  }
-  .shop-row {
-    margin-top: 200px;
-    margin-left: 150px;
-  }
-  .freshner-details h2 {
-    font-size: 2rem;
-    margin-left: 50px;
-
-  }
+.freshner-image img {
+width: 100%;
+height: auto;
+}
+.freshner-details h2 {
+font-size: 2rem;
+margin-left: 50px;  }
 }

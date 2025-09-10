@@ -59,11 +59,11 @@ function Flowers() {
               ) : (
                 <>
                   <img
-                    src={`https://flower-delivery-website-backend-v9d6.onrender.com/uploads/${flower.image}`}
-
+                    src={flower.image} // ✅ fixed: use Cloudinary URL directly
                     alt={flower.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }}
                   />
+
                   {/* X icon in top-right corner */}
                   <span
                     onClick={() => handleDelete(flower._id)}
@@ -103,7 +103,7 @@ function Flowers() {
                       <span style={{ color: 'red' }}>Name:</span></strong> {flower.name}
                   </p>
                   <p><strong style={{ color: 'red' }}>Category:</strong> {flower.category}</p>
-                  <p><strong style={{ color: 'red' }}>Price:</strong> ₦{flower.price}</p>
+                  <p><strong style={{ color: 'red' }}>Price:</strong> ${flower.price}</p>
                   <p><strong style={{ color: 'red' }}>Description:</strong> {flower.description}</p>
                   {/* Delete button under description */}
                   <button

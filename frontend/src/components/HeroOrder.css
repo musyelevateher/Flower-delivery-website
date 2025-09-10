@@ -1,0 +1,52 @@
+/* Container */
+.main-flex {
+  display: flex;
+  flex-direction: column; /* stack columns on mobile */
+  
+  border-bottom: 2px solid black;             /* space between columns */
+}
+
+/* Left column */
+.main-flex > div:first-child {
+  flex: 2 1 auto;         /* flexible, can grow/shrink */
+  min-width: 250px;
+}
+
+/* Right column */
+.border {
+  flex: 1 1 auto;
+  min-width: 200px;
+  border-left: none;      /* hide on mobile */
+  
+}
+
+/* Tablets and up */
+@media screen and (min-width: 768px) {
+  .main-flex {
+    flex-direction: row;  /* side-by-side */
+    align-items: stretch; /* make columns equal height */
+  }
+    .main-flex > div:first-child {
+    flex: 1;              /* left column wider */
+  }
+  .border {
+    border-left: 2px solid black;
+    flex: 1; /* vertical divider */
+  }
+  
+  
+    
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .main-flex > div:first-child {
+    flex: 1;              /* left column wider */
+  }
+  .border {
+    flex: 1;              /* right column smaller */
+  }
+  .main-flex {
+      margin: 0;  
+  }
+}

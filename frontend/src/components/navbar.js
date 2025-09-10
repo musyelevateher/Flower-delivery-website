@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
+import './navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import navMenuRight from '../assets/navmenu-right.svg'; 
+import navMenuRight from '../assets/shopping-bag.svg'; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,29 +10,30 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    setCartOpen(false); // close cart section if it's open
+    setCartOpen(false);
   };
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
-    setMenuOpen(false); // close menu section if it's open
+    setMenuOpen(false);
   };
 
   return (
     <div className="top">
       <nav className="navbar">
-        <div className="icons-section">
+        
+        {/* ==== MOBILE / TABLET ==== */}
+        <div className="mobile-only icons-section">
           <div className="hamburger-wrapper">
-
-          <GiHamburgerMenu
-            className="hamburger-icon"
-            onClick={toggleMenu}
-          />
+            <GiHamburgerMenu
+              className="hamburger-icon"
+              onClick={toggleMenu}
+            />
           </div>
         </div>
 
-        
-        <div className="icons-section">
+        <div className="cart-wrapper">
+          <div className="divider"></div>
           <img
             src={navMenuRight}
             alt="Cart"
@@ -39,24 +41,37 @@ const Navbar = () => {
             onClick={toggleCart}
           />
         </div>
+
+        {/* ==== DESKTOP ==== */}
+        <div className="desktop-only desktop-menu left-menu">
+          <ul>
+            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div className="desktop-only desktop-menu right-menu">
+          <ul>
+            <li><Link to="/signin">Sign in</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+          </ul>
+        </div>
       </nav>
 
-      {/* Navigation Menu */}
+      {/* Dropdowns for mobile/tablet */}
       {menuOpen && (
         <div className="dropdown menu-dropdown">
           <ul>
-            <li>Shop</li>
-            <li>Contact</li>
-            
+            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
       )}
 
-      {/* Cart-related Links */}
       {cartOpen && (
         <div className="dropdown cart-dropdown">
-          <h3>Sign in</h3>
-          <h4>Cart</h4>
+          <h3><Link to="/signin">Sign in</Link></h3>
+          <h4><Link to="/cart">Cart</Link></h4>
         </div>
       )}
     </div>
